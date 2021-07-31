@@ -13,6 +13,8 @@ CREATE TABLE intergrated_sensor (
   vibration_a NUMBER,
   vibration_b NUMBER,
   vibration_c NUMBER,
+  risk CHAR(1),
+  detail VARCHAR2(100),
   intergrated DATE
 );
 
@@ -20,10 +22,10 @@ CREATE SEQUENCE intergrated_sensor_seq START WITH 1 INCREMENT BY 1 NOMAXVALUE NO
 
 -- 테스트 케이스
 INSERT INTO intergrated_sensor
-VALUES(intergrated_sensor_seq.NEXTVAL, 111, 123, 234, 56, 78, 89, '2021-07-11 15:00:00');
+VALUES(intergrated_sensor_seq.NEXTVAL, 111, 123, 234, 56, 78, 89, 1, 'risk:sound-C', '2021-07-11 15:00:00');
 
 INSERT INTO intergrated_sensor
-VALUES(intergrated_sensor_seq.NEXTVAL, 56, 123, 62, 75, 61, 80, '2021-07-11 16:00:00');
+VALUES(intergrated_sensor_seq.NEXTVAL, 56, 123, 62, 75, 61, 80, 1, 'risk:sound-B', '2021-07-11 16:00:00');
 
 INSERT INTO intergrated_sensor
-VALUES(intergrated_sensor_seq.NEXTVAL, 89, 111, 65, 90, 97, 136, '2021-07-11 17:30:00');
+VALUES(intergrated_sensor_seq.NEXTVAL, 89, 111, 65, 90, 97, 136, 1, 'risk:vibration-C', '2021-07-11 17:30:00');
