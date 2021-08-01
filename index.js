@@ -1,4 +1,5 @@
-const { selectRun, insertRun } = require("./db");
+const stmts = require('./statements');
 
-insertRun('anyT', "Songsu2");
-selectRun('anyT');
+for (const s of stmts.SD) {
+  console.log(s);
+}
