@@ -5,7 +5,8 @@ void loop() {
 	a = analogRead(A0);
   if (a > 50) {
     Serial.println(a);
-    delay(10);
+    delay(100);
+  }
 }
 
 

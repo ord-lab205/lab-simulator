@@ -1,9 +1,10 @@
-const SerialPort = require('serialport')
-const Readline = require('@serialport/parser-readline')
-const Delimiter = require('@serialport/parser-delimiter')
-const port = new SerialPort('COM9', {
-  baudRate: 9600
-})
+const SerialPort = require('serialport');
 
-const parser = port.pipe(new Readline({ delimiter: '\n' }))
-parser.on('data', console.log) // emits data after every '\n'
+SerialPort.list().then(ports => {
+  const port = ports.find(port => /arduino/i.test(port.manufacturer))
+  if (!port) {
+    console.error('Arduino Not found')
+    process.exit(1)
+  }
+  console.log(port)
+})
