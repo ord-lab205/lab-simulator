@@ -1,12 +1,12 @@
 const oracledb = require('oracledb');
-
-const config = require('./dbConfig');
+const dbConfig = require('./dbconfig');
+const demoSetup = require('./demosetup');
 
 const selectRun = async aTable => {
   let conn;
 
   try {
-    conn = await oracledb.getConnection(config);
+    conn = await oracledb.getConnection(dbConfig);
 
     const sql = 'SELECT * FROM ' + aTable,
           bindParams = {},
@@ -32,7 +32,7 @@ const insertRun = async (aTable, value) => {
   let conn;
 
   try {
-    conn = await oracledb.getConnection(config);
+    conn = await oracledb.getConnection(dbConfig);
 
     const sql = 'INSERT INTO ' + aTable + ' VALUES (anyT_seq.NEXTVAL, :NAME)',
           bindParams = [value],

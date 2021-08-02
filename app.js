@@ -14,9 +14,8 @@ const init = async () => {
     await oracledb.createPool(config);
     const conn = await oracledb.getConnection();
     await demoSetup.setupSD(conn);
-    // await demoSetup.setupVB(conn);
-    // await demoSetup.setupIS(conn);
-    // await demoSetup.setupDRF(conn);
+    await demoSetup.setupVB(conn);
+    await demoSetup.setupIS(conn);
     await conn.close();
 
     app.use(express.static(path.join(__dirname + '/Railway-Track-Monitoring-master')));

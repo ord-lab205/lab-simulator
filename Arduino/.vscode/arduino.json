@@ -1,5 +1,5 @@
 {
-    "sketch": "Sound.ino",
+    "sketch": "sound/Sound.ino",
     "board": "arduino:avr:uno",
     "port": "COM9"
 }
