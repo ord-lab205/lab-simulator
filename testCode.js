@@ -5,7 +5,7 @@ const http = require('http');
 const path = require('path');
 const oracledb = require('oracledb');
 
-const { init } = require('./db');
+const { init, selectRun } = require('./db');
 const config = require('./dbconfig');
 const demoSetup = require('./demosetup');
 
@@ -23,11 +23,15 @@ app.use(express.urlencoded({ extended: true }));
 io.on('connection', socket => {
   console.log('A user is connected.');
 
-
+  // 위험 요소에 대한 이벤트
   socket.on('warning ', data => {});
+
+  // 일정 간격으로 데이터를 클라이언트로 전송
   setInterval(() => {
-    io.emit('ok', Math.random() * 7);
-  }, 1000);
+    selectRun('intergrated_sensor').then(result => {
+      io.emit('ok', result);
+    });
+  }, 2000);
 })
 
 httpServer.listen(PORT, () => console.log(`Server is running at http://localhost:${PORT}`));
