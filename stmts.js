@@ -152,5 +152,4 @@ module.exports = {
     `INSERT INTO discovered_risk_factor
     VALUES(discovered_risk_factor_seq.NEXTVAL, 89, 111, 65, 90, 97, 136, 1, 'risk:vibration-C', '2021-07-11 17:30:00')`
   ]
-
 }
