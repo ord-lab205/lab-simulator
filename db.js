@@ -32,13 +32,14 @@ const selectRun = async aTable => {
   try {
     conn = await oracledb.getConnection(config);
 
-    const sql = 'SELECT * FROM ' + aTable,
+    const sql = `SELECT * FROM (SELECT * FROM ${aTable} ORDER BY ROWNUM DESC) WHERE ROWNUM = 1`,
           bindParams = {},
           options = { outFormat: oracledb.OUT_FORMAT_OBJECT }; // oracledb.OBJECT are deprecated but still usable.
 
     const result = await conn.execute(sql, bindParams, options);
-    
-    console.log(result.rows);
+
+    return result.rows[0];
+
   } catch (err) {
     console.log('*Error in processing.\n', err.message);
   } finally {
