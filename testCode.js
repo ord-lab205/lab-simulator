@@ -20,6 +20,16 @@ init();
 app.use(express.static(path.join(__dirname + '/Railway-Track-Monitoring-master')));
 app.use(express.urlencoded({ extended: true }));
 
+io.on('connection', socket => {
+  console.log('A user is connected.');
+
+
+  socket.on('warning ', data => {});
+  setInterval(() => {
+    io.emit('ok', Math.random() * 7);
+  }, 1000);
+})
+
 httpServer.listen(PORT, () => console.log(`Server is running at http://localhost:${PORT}`));
 
 httpServer.on('error', err => console.error('Error in listening:\n', err.message));

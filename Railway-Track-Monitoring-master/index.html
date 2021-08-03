@@ -310,5 +310,11 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  socket.on('ok', data => console.log(data));
+</script>
 
 </html>
