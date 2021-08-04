@@ -39,6 +39,11 @@ io.on('connection', socket => {
       io.emit('ok', result);
     });
   }, 2000);
+
+
+  setInterval(() => {
+    
+  })
 })
 
 httpServer.listen(PORT, () => console.log(`Server is running at http://localhost:${PORT}`));
@@ -50,3 +55,29 @@ httpServer.on('request', (req, res) => handleRequest(req));
 const handleRequest = async (req, res) => {
   console.log(req.url);
 }
+
+const handleError = async (res, text, err) => {
+  if (err) {
+    text += ": " + err.message;
+  }
+  console.error(text);
+  response.writeHead(500, {"Content-Type": "text/html"});
+  response.write(text);
+  response.end();
+}
+
+const closePoolAndExit = async () => {
+  console.log("\nTerminating");
+  try {
+    await oracledb.getPool().close(10);
+    console.log("Pool closed");
+    process.exit(0);
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+}
+
+process
+  .once('SIGTERM', closePoolAndExit)
+  .once('SIGINT',  closePoolAndExit);
