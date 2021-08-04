@@ -71,3 +71,49 @@ select * from tmp;
 
 -- anyT
 create sequence anyT_seq start with 1 increment by 1 nocache;
+
+
+-- Test each table
+select * from sound_sensor_a;
+select * from sound_sensor_b;
+select * from sound_sensor_c;
+select * from vibration_sensor_a;
+select * from vibration_sensor_b;
+select * from vibration_sensor_c;
+select * from intergrated_sensor;
+
+
+-- What about error?
+-- CREATE or REPLACE FUNCTION testFunc
+--   RETURN NUMBER
+-- IS
+--   SAD NUMBER;
+-- BEGIN
+--   SELECT AVG(sa.data) INTO sad FROM sound_sensor_a sa;
+--   RETURN sad;
+-- END;
+
+-- SELECT testFunc from dual;
+
+
+-- Test with one table
+SELECT idx
+     , data
+     , CASE WHEN data >= 100 THEN 1
+            ELSE 0
+       END AS risk
+     , CASE WHEN data >= 100 THEN 'SA'
+            ELSE NULL
+       END AS detail
+FROM sound_sensor_a;
+
+
+-- Test about copy insert
+CREATE TABLE tmp_insert_test (
+  no NUMBER,
+  data NUMBER
+);
+
+INSERT INTO tmp_insert_test(data) select data from sound_sensor_a;
+
+SELECT * FROM tmp_insert_test;
