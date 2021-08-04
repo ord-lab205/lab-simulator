@@ -1,6 +1,7 @@
 const oracledb = require('oracledb');
 const config = require('./dbconfig');
 const demoSetup = require('./demosetup');
+const { intergrationSensors: stmts } = require('./statements');
 
 const init = async () => {
   let conn;
@@ -41,7 +42,7 @@ const selectRun = async aTable => {
     return result.rows[0];
 
   } catch (err) {
-    console.log('*Error in processing.\n', err.message);
+    console.error('*Error in processing.\n', err.message);
   } finally {
     if (conn) {
       try {
@@ -52,6 +53,45 @@ const selectRun = async aTable => {
     }
   }
 }
+
+
+const intergrationRun = async () => {
+  let conn;
+
+  try {
+    conn = await oracledb.getConnection(config);
+
+    for (const s of stmts) {
+      try {
+        await conn.execute(s);
+      } catch (err) {
+        if (err.errorNum != 942) throw (err);
+      }
+    }
+    await conn.commit();
+
+    const sql = 'SELECT * FROM tmp_all_sensor',
+          bindParams = {},
+          options = {outFormat: oracledb.OUT_FORMAT_OBJECT };
+
+    const result = await conn.execute(sql, bindParams, options);
+    const row = result.rows[0];
+
+    return Object.keys(row).filter(s => row[s] > 80);
+
+  } catch (err) {
+    console.error('*Error in processing.\n', err.message);
+  } finally {
+    if (conn) {
+      try {
+        await conn.close();
+      } catch (err) {
+        console.log('*Error in closing connection.\n', err.message);
+      }
+    }
+  }
+}
+
 
 const insertRun = async (aTable, value) => {
   let conn;
@@ -71,7 +111,7 @@ const insertRun = async (aTable, value) => {
 
     await conn.execute(sql, bindParams, options);
   } catch (err) {
-    console.log('*Error in processing.\n', err.message);
+    console.error('*Error in processing.\n', err.message);
   } finally {
     if (conn) {
       try {
@@ -83,5 +123,5 @@ const insertRun = async (aTable, value) => {
   }
 }
 
-module.exports = { init, selectRun, insertRun };
+module.exports = { init, selectRun, intergrationRun, insertRun };
 
