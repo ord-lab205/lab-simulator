@@ -1,4 +1,4 @@
-const stmts = require('./stmts');
+const stmts = require('./statements');
 
 const setupSD = async conn => {
   const SD = stmts.SD;
