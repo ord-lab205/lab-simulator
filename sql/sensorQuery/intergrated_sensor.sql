@@ -14,7 +14,7 @@ CREATE TABLE intergrated_sensor (
   vibration_b NUMBER,
   vibration_c NUMBER,
   risk CHAR(1),
-  detail VARCHAR2(100),
+  detail VARCHAR2(50),
   intergrated DATE
 );
 
