@@ -86,7 +86,9 @@ const intergrationRun = async () => {
     const factors = Object.keys(row).filter(s => row[s] > 80);
 
     // RISK 필드와 DETAIL 필드 내용 추가
-    row
+    row.risk = factors.length === 0 ? 'Good!' : 'Warning!';
+    row.detail = factors.toString();
+
     return row;
 
   } catch (err) {
