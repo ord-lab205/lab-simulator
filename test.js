@@ -19,10 +19,12 @@ intergrationRun().then(result => {
 // const obj = {
 //   name: 1,
 //   no: 2,
+//   ka: no + 1
 // }
 
 // console.log(obj);
 
 // obj['ok'] = 'okok';
+
 
 // console.log(obj);

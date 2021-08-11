@@ -43,6 +43,7 @@ module.exports = {
     `INSERT INTO sound_sensor_c values(sound_sensor_c_seq.NEXTVAL, 56, '2021-07-11 16:00:00')`,
     `INSERT INTO sound_sensor_c values(sound_sensor_c_seq.NEXTVAL, 89, '2021-07-11 17:30:00')`
   ],
+
   VB: [
     // 날짜 형식 세션 설정
     `ALTER SESSION SET nls_date_format = 'YYYY-MM-DD HH24:MI:SS'`,
@@ -87,6 +88,7 @@ module.exports = {
     `INSERT INTO vibration_sensor_c values(vibration_sensor_c_seq.NEXTVAL, 56, '2021-07-11 16:00:00')`,
     `INSERT INTO vibration_sensor_c values(vibration_sensor_c_seq.NEXTVAL, 89, '2021-07-11 17:30:00')`
   ],
+
   IS: [
     `ALTER SESSION SET nls_date_format = 'YYYY-MM-DD HH24:MI:SS'`,
 
@@ -119,6 +121,7 @@ module.exports = {
     `INSERT INTO intergrated_sensor
     VALUES(intergrated_sensor_seq.NEXTVAL, 89, 111, 65, 90, 97, 136, 1, 'risk:vibration-C', '2021-07-11 17:30:00')`
   ],
+
   DRF: [
     // 날짜 형식 세션 설정
     `ALTER SESSION SET nls_date_format = 'YYYY-MM-DD HH24:MI:SS'`,
@@ -151,5 +154,44 @@ module.exports = {
 
     `INSERT INTO discovered_risk_factor
     VALUES(discovered_risk_factor_seq.NEXTVAL, 89, 111, 65, 90, 97, 136, 1, 'risk:vibration-C', '2021-07-11 17:30:00')`
+  ],
+
+  intergrationSensors: [
+    `DROP TABLE tmp_all_sensor PURGE`,
+
+    `CREATE TABLE tmp_all_sensor
+     AS
+     SELECT AVG(sa.data) "SOUND_A"
+         , AVG(sb.data) "SOUND_B"
+         , AVG(sc.data) "SOUND_C"
+         , AVG(va.data) "VIBRATION_A"
+         , AVG(vb.data) "VIBRATION_B"
+         , AVG(vc.data) "VIBRATION_C"
+     FROM sound_sensor_a sa
+        , sound_sensor_b sb
+        , sound_sensor_c sc        
+        , vibration_sensor_a va
+        , vibration_sensor_b vb
+        , vibration_sensor_c vc`,
+  ],
+
+  allSensorsAverage:
+    `SELECT AVG(sa.data) "SOUND_A"
+          , AVG(sb.data) "SOUND_B"
+          , AVG(sc.data) "SOUND_C"
+          , AVG(va.data) "VIBRATION_A"
+          , AVG(vb.data) "VIBRATION_B"
+          , AVG(vc.data) "VIBRATION_C"
+     FROM sound_sensor_a sa
+        , sound_sensor_b sb
+        , sound_sensor_c sc        
+        , vibration_sensor_a va
+        , vibration_sensor_b vb
+        , vibration_sensor_c vc`,
+
+  allSensorsTruncate: [
+    
   ]
+
+  
 }

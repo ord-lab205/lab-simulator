@@ -1,7 +1,7 @@
 const oracledb = require('oracledb');
 const config = require('./config/oracle');
 const demoSetup = require('./demosetup');
-const { intergrationSensors: stmts } = require('./statements');
+const { allSensorsAverage } = require('./statements');
 
 // 데이터 베이스 초기화
 const init = async () => {
@@ -64,33 +64,39 @@ const intergrationRun = async () => {
   try {
     conn = await oracledb.getConnection(config);
 
-    // 모든 센서 테이블을 통합한 tmp_all_sensor 테이블 생성
-    for (const s of stmts) {
-      try {
-        await conn.execute(s);
-      } catch (err) {
-        if (err.errorNum != 942) throw (err);
-      }
-    }
-    await conn.commit();
+    // 각 센서 테이블의 값을 통합해서 가져옴
+    let sql = allSensorsAverage,
+        options = { outFormat: oracledb.OUT_FORMAT_OBJECT };
 
-    // tmp_all_sensor 테이블 SELECT
-    const sql = 'SELECT * FROM tmp_all_sensor',
-          bindParams = {},
-          options = { outFormat: oracledb.OUT_FORMAT_OBJECT };
-
-    const result = await conn.execute(sql, bindParams, options);
+    const result = await conn.execute(sql, {}, options);
     const row = result.rows[0];
 
     // 수치가 기준을 초과하는 필드 이름 추출(위험 요소)
     const factors = Object.keys(row).filter(s => row[s] > 80);
 
     // RISK 필드와 DETAIL 필드 내용 추가
-    row.risk = factors.length === 0 ? 'Good!' : 'Warning!';
+    row.risk = factors.length === 0 ? 0 : 1;
     row.detail = factors.toString();
 
-    return row;
+    // intergrated_sensor 테이블에 INSERT
+    sql = `INSERT INTO intergrated_sensor
+           VALUES (intergrated_sensor_seq.nextval, :1, :2, :3, :4, :5, :6, :7, :8, sysdate)`,
+    bindParams = Object.values(row);
+    options = {
+      autoCommit: true,
+      bindDefs: {
+        1: { type: oracledb.DB_TYPE_NUMBER },
+        2: { type: oracledb.DB_TYPE_NUMBER },
+        3: { type: oracledb.DB_TYPE_NUMBER },
+        4: { type: oracledb.DB_TYPE_NUMBER },
+        5: { type: oracledb.DB_TYPE_NUMBER },
+        6: { type: oracledb.DB_TYPE_NUMBER },
+        7: { type: oracledb.DB_TYPE_VARCHAR },
+        8: { type: oracledb.DB_TYPE_VARCHAR },
+      },
+    }
 
+    await conn.execute(sql, bindParams, options);
   } catch (err) {
     console.error('*Error in processing.\n', err.message);
   } finally {
