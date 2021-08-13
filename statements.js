@@ -105,7 +105,7 @@ module.exports = {
       vibration_b NUMBER,
       vibration_c NUMBER,
       risk CHAR(1),
-      detail VARCHAR2(50),
+      detail VARCHAR2(100),
       intergrated DATE
     )`,
 
@@ -190,7 +190,12 @@ module.exports = {
         , vibration_sensor_c vc`,
 
   allSensorsTruncate: [
-    
+    `TRUNCATE TABLE sound_a`,
+    `TRUNCATE TABLE sound_b`,
+    `TRUNCATE TABLE sound_c`,
+    `TRUNCATE TABLE vibration_a`,
+    `TRUNCATE TABLE vibration_b`,
+    `TRUNCATE TABLE vibration_c`,
   ]
 
   
