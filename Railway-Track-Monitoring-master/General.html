@@ -7,19 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Real time</title>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  
 
-<link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="css/datepicker.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/general.css">
+  <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+  <!-- <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
 </head>
 
 <body>
@@ -34,9 +34,9 @@
       <dl>
         <dd class="on"><a href="General.html">General</a></dd>
         <dd><a href="index.html">Residence area</a></dd>
-          <dd><a href="bridge.html">Bridge</a></dd>
-          <dd><a href="tunnel.html">Tunnel</a></dd>
-          <dd><a href="animals.html">Animals</a></dd>
+          <dd><a href="/bridge.html">Bridge</a></dd>
+          <dd><a href="/tunnel.html">Tunnel</a></dd>
+          <dd><a href="/animals.html">Animals</a></dd>
           <dd><a href="charts.html">Diagramma</a></dd>
           <dd><a href="baojing.html">History Data</a></dd>
       </dl>
@@ -52,24 +52,51 @@
           </div>
           <div class="dt-zhu-t">
               <div >
-                <img src="css/imgs/green.png" alt="">
+                <img src="/css/imgs/green.png" alt="">
                 <img src="css/imgs/red.png" alt="">
               Good / Bad status </div>
             </div>
           <div class="dt-zhu-t">
-              <img id="sensir" src="css/imgs/111-b.png" alt="">
+              <img id="sensir" src="https://image.flaticon.com/icons/png/512/2539/2539295.png" alt="">
               Sensor (Noise,Vibration) </div>
         </div>
        
 
-        <img class="myphoto" id="bulb1" src="css/imgs/gray.png">
-        <img class="myphoto" id="bulb2" src="css/imgs/gray.png">
-        <img class="myphoto" id="bulb3" src="css/imgs/gray.png">
-        <img class="myphoto" id="bulb4" src="css/imgs/gray.png">
+        <img class="myphoto" id="bulb1" src="/css/imgs/gray.png">
+        <!-- <img class="myphoto" id="bulb2" src="/css/imgs/gray.png">
+        <img class="myphoto" id="bulb3" src="/css/imgs/gray.png">
+        <img class="myphoto" id="bulb4" src="/css/imgs/gray.png"> -->
 
         <div class="dt-biao">
-         
-          
+<!--          
+          <img id="sen1" src="https://www.flaticon.com/svg/vstatic/svg/2748/2748615.svg?token=exp=1615363926~hmac=3bd73eae0b5fd9f6b4e1beb1f4bc5130" alt="">
+          <img id="sen2" src="https://www.flaticon.com/svg/vstatic/svg/2748/2748615.svg?token=exp=1615363926~hmac=3bd73eae0b5fd9f6b4e1beb1f4bc5130" alt="">
+          <img id="sen3" src="https://www.flaticon.com/svg/vstatic/svg/2748/2748615.svg?token=exp=1615363926~hmac=3bd73eae0b5fd9f6b4e1beb1f4bc5130" alt="">
+          <img id="sen4" src="https://www.flaticon.com/svg/vstatic/svg/2748/2748615.svg?token=exp=1615363926~hmac=3bd73eae0b5fd9f6b4e1beb1f4bc5130" alt="">
+           -->
+
+
+
+          <div class="space" style="z-index:5">  
+            <div class="planet" style="z-index:5"></div>
+            <div class="orbit" style="z-index:5"></div>
+            <div class="sat" id="sat1" style="z-index:5">
+              
+              <img class="sat_train" src="https://image.flaticon.com/icons/png/512/3267/3267406.png">
+              
+            </div>
+            </div>
+            
+        
+
+        <img class="trainroad" id="trainroad" src="/css/imgs/train_road_small.png">
+        
+        <button id="buttons" class="btn btn-primary start">start</button>
+        <button id="buttonss" class="btn btn-primary stop">stop</button>
+        
+
+
+
                 
         </div>
       </div>
@@ -87,44 +114,42 @@
             <div id="tablee" class="table-responsive">
               <table class="table" id="table">
                 <tr>
-                  <th rowspan="2">ID</th>
-                  <th rowspan="2">Sensor ID</th>
-                  <th colspan="3">Noise (dB)</th>      
-                  <th colspan="3">Vibration (VdB)</th>
-                  <th rowspan="2">Damages</th>
-                  <th rowspan="2">Status</th>
-                  <th rowspan="2">Notice</th>
+                  <th>Sensor ID</th>
+                  <th>Noise (dB)</th>
+                  <th>Vibration (VdB)</th>
+                  <th>Status</th>
+                  <th>Notice</th>
                 </tr>
-
-                <tr>
-                  <th>N1(100m)</th>
-                  <th>N2(300m)</th>
-                  <th>N3(500m)</th>
-
-                  <th>V1(100m)</th>
-                  <th>V2(300m)</th>
-                  <th>V3(500m)</th>
+                <tr id="details">
+                  <!-- <td>1</td>
+                  <td>65</td>
+                  <td>70</td>
+                  <td style="color: green;">Good</td>
+                  <td>Done</td> -->
                 </tr>
               </table>
             </div>  
           </div> 
          </div>
+         
       <div class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition">
         <div class="el-table__header-wrapper">
-             
+                          
         </div>
         <div class="el-table__body-wrapper is-scrolling-none">
         </div>
- 
+
         <div class="el-table__column-resize-proxy" style="display: none;"></div>
       </div>
     </div>
   </div>
   
 </body>
-<script src="js_folder/general.js"></script>
+<script src="/js_folder/general.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 </html>

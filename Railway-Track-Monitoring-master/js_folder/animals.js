@@ -16,10 +16,10 @@ function myMove() {
     if (pos == 1465) {
       pos = 0;
       clearInterval(id1);
-      document.getElementById('bulb1').src='css/imgs/gray.png'
-      document.getElementById('bulb2').src='css/imgs/gray.png'
-      document.getElementById('bulb3').src='css/imgs/gray.png'
-      document.getElementById('bulb4').src='css/imgs/gray.png'
+      document.getElementById('bulb1').src='/css/imgs/gray.png'
+      document.getElementById('bulb2').src='/css/imgs/gray.png'
+      document.getElementById('bulb3').src='/css/imgs/gray.png'
+      document.getElementById('bulb4').src='/css/imgs/gray.png'
 
       myTrain2();
 
@@ -42,10 +42,10 @@ function myTrain2() {
   function frame() {
     if (pos2 == -1465) {
       clearInterval(id2);
-      document.getElementById('bulb1').src='css/imgs/gray.png'
-      document.getElementById('bulb2').src='css/imgs/gray.png'
-      document.getElementById('bulb3').src='css/imgs/gray.png'
-      document.getElementById('bulb4').src='css/imgs/gray.png'
+      document.getElementById('bulb1').src='/css/imgs/gray.png'
+      document.getElementById('bulb2').src='/css/imgs/gray.png'
+      document.getElementById('bulb3').src='/css/imgs/gray.png'
+      document.getElementById('bulb4').src='/css/imgs/gray.png'
       pos2 = 0;
       elem.style.left = 0 + 'px';
       elem2.style.left = 0 + 'px';
@@ -150,23 +150,23 @@ function myFunction() {
         
         cell11.innerHTML = "<span style='color: red;'> Bad </span>";
         cell10.innerHTML = "<span style='color: red;'> Emergency section</span>";
-        pic="css/imgs/red.png";
+        pic="/css/imgs/red.png";
   
       }else if (vibration >=90){
   
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Vibration! <br> (Over 90VdB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
           
       }else if (noise >=90){
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Noise! <br> (Over 85dB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
       } 
       else{
         cell11.innerHTML = "<span style='color: green;'> Good </span>";
         cell10.innerHTML = "Done";
-        pic="css/imgs/green.png";
+        pic="/css/imgs/green.png";
       }
 
 
@@ -200,23 +200,23 @@ function myFunction() {
         
         cell11.innerHTML = "<span style='color: red;'> Bad </span>";
         cell10.innerHTML = "<span style='color: red;'> Emergency section</span>";
-        pic="css/imgs/red.png";
+        pic="/css/imgs/red.png";
   
       }else if (vibration >=90){
   
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Vibration! <br> (Over 90VdB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
           
       }else if (noise >=90){
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Noise! <br> (Over 85dB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
       } 
       else{
         cell11.innerHTML = "<span style='color: green;'> Good </span>";
         cell10.innerHTML = "Done";
-        pic="css/imgs/green.png";
+        pic="/css/imgs/green.png";
       }
 
 
@@ -247,23 +247,23 @@ function myFunction() {
         
         cell11.innerHTML = "<span style='color: red;'> Bad </span>";
         cell10.innerHTML = "<span style='color: red;'> Emergency section</span>";
-        pic="css/imgs/red.png";
+        pic="/css/imgs/red.png";
   
       }else if (vibration >=90){
   
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Vibration! <br> (Over 90VdB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
           
       }else if (noise >=90){
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Noise! <br> (Over 85dB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
       } 
       else{
         cell11.innerHTML = "<span style='color: green;'> Good </span>";
         cell10.innerHTML = "Done";
-        pic="css/imgs/green.png";
+        pic="/css/imgs/green.png";
       }
 
 
@@ -295,23 +295,23 @@ function myFunction() {
         
         cell11.innerHTML = "<span style='color: red;'> Bad </span>";
         cell10.innerHTML = "<span style='color: red;'> Emergency section</span>";
-        pic="css/imgs/red.png";
+        pic="/css/imgs/red.png";
   
       }else if (vibration >=90){
   
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Vibration! <br> (Over 90VdB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
           
       }else if (noise >=90){
           cell11.innerHTML = "<span style='color: red;'> Bad </span>";  
           cell10.innerHTML = "Warning Noise! <br> (Over 85dB!)";
-          pic="css/imgs/red.png";
+          pic="/css/imgs/red.png";
       } 
       else{
         cell11.innerHTML = "<span style='color: green;'> Good </span>";
         cell10.innerHTML = "Done";
-        pic="css/imgs/green.png";
+        pic="/css/imgs/green.png";
       }
 
 

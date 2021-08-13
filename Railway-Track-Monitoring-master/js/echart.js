@@ -37,13 +37,13 @@ $(function () {
             name:'Vibration',
             type:'line',
             step: 'start',
-            data:[120, 132, 101, 134, 90, 230, 210]
+            data:[98, 88, 64, 85, 88, 81, 82]
         },
         {
             name:'Noise',
             type:'line',
             step: 'middle',
-            data:[220, 282, 201, 234, 290, 430, 410]
+            data:[71, 71, 81, 76, 77, 68, 85]
         },
         // {
         //     name:'Step End',
