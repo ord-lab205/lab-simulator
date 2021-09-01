@@ -6,7 +6,7 @@ DROP SEQUENCE intergrated_sensor_seq;
 
 -- 통합된 소리, 진동 테이블과 시퀸스 생성
 CREATE TABLE intergrated_sensor (
-  idx NUMBER NOT NULL,
+  idx NUMBER,
   sound_a NUMBER,
   sound_b NUMBER,
   sound_c NUMBER,
@@ -14,7 +14,7 @@ CREATE TABLE intergrated_sensor (
   vibration_b NUMBER,
   vibration_c NUMBER,
   risk CHAR(1),
-  detail VARCHAR2(50),
+  detail VARCHAR2(100),
   intergrated DATE
 );
 
