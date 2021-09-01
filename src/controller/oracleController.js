@@ -68,6 +68,29 @@ const oracleController = {
     }
   },
 
+  _fn_insertIntoSensor: async function (table, value, len) {
+    let conn;
+    try {
+      conn = await this.oracledb.getConnection();
+
+      const query = `INSERT INTO ${table} VALUES (${table}_seq.NEXTVAL, :1, :2, SYSDATE)`
+      const bindParams = [value, len];
+      const options = {
+        autoCommit: true,
+        bindDefs: {
+          1: { type: this.oracledb.DB_TYPE_NUMBER },
+          2: { type: this.oracledb.DB_TYPE_NUMBER },
+        }
+      };
+
+      await conn.execute(query, bindParams, options);
+    } catch (err) {
+      console.error(`Error in _fn_insertIntoSensor:\n${err}`);
+    } finally {
+      this._fn_closeConnection(conn);
+    }
+  },
+
   _fn_insertIntoSensors: async function (table, row) {
     let conn;
     try {
@@ -78,14 +101,14 @@ const oracleController = {
       const options = {
         autoCommit: true,
         bindDefs: {
-          1: { type: oracledb.DB_TYPE_NUMBER },
-          2: { type: oracledb.DB_TYPE_NUMBER },
-          3: { type: oracledb.DB_TYPE_NUMBER },
-          4: { type: oracledb.DB_TYPE_NUMBER },
-          5: { type: oracledb.DB_TYPE_NUMBER },
-          6: { type: oracledb.DB_TYPE_NUMBER },
-          7: { type: oracledb.DB_TYPE_VARCHAR },
-          8: { type: oracledb.DB_TYPE_VARCHAR },
+          1: { type: this.oracledb.DB_TYPE_NUMBER },
+          2: { type: this.oracledb.DB_TYPE_NUMBER },
+          3: { type: this.oracledb.DB_TYPE_NUMBER },
+          4: { type: this.oracledb.DB_TYPE_NUMBER },
+          5: { type: this.oracledb.DB_TYPE_NUMBER },
+          6: { type: this.oracledb.DB_TYPE_NUMBER },
+          7: { type: this.oracledb.DB_TYPE_VARCHAR },
+          8: { type: this.oracledb.DB_TYPE_VARCHAR },
         }
       };
 
