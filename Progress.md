@@ -2,15 +2,35 @@
 
 ---
 
+`1001`
+```
+# 코드 진행
+device:
+  - (dotenv)
+    1. NODE_ENV의 값에 따라 환경 변수 파일 변경.
+    2. NODE_ENV의 값에 따른 모드에 따라 성능이 변경되는 패키지가 있으므로 소스 최상단에 위치.
+
+  - (serialport)
+    1. SYSTEM에서 Arduino를 참조하는 포트를 검색.
+    2. Serial에 출력되는 데이터를 처리.
+
+  - (oracledb)
+    1. Pool 생성, Connection을 한 번에 동작할 수 있도록 코드 작성. (만약 Connection이 클라이언트를 기준으로 동작한다면 분리할 예정)
+    2. Insert문 작성.
+    3. 서버 프로세스 종료 시 Pool 종료.
+```
+
+---
+
 `0929`, `0930`
 ```
-고려 사항 추가
+# 고려 사항 추가
 - 'Snake case'에 따라 변수 및 함수명 작성.
 - 일정량 이상의 코드를 포함한 함수를 'Strict 모드'로 작성.
 - 환경 변수 'NODE_ENV'가 'development', 'production'인지에 따라 다른 환경 변수 파일 사용할 수 있도록 작성.
 
-코드 진행
-- (main)
+# 코드 진행
+main:
   1. 즉시 실행 함수를 통해 스크립트 작성.
 
 - (dotenv)
@@ -24,7 +44,7 @@
 
 - (oracledb)
   1. Pool 생성, Connection을 한 번에 동작할 수 있도록 코드 작성. (만약 Connection이 클라이언트를 기준으로 동작한다면 분리할 예정)
-  2. Select, Insert문 작성.
+  2. Select문 작성.
   3. 서버 프로세스 종료 시 Pool 종료.
 
 - (socket.io)
