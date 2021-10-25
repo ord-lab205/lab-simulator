@@ -1,0 +1,35 @@
+{
+  "name": "Source1",
+  "version": "1.0.0",
+  "description": "`이진형`(bya2, byaa1972@gmail.com)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:dev": "cross-env NODE_ENV=development nodemon app",
+    "test:prod": "cross-env NODE_ENV=production nodemon app",
+    "file:test": "cross-env NODE_ENV=production node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bya2/lab-simulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bya2/lab-simulator/issues"
+  },
+  "homepage": "https://github.com/bya2/lab-simulator#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "oracledb": "^5.3.0",
+    "socket.io": "^4.3.1",
+    "socket.io-client": "^4.3.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.14"
+  }
+}
