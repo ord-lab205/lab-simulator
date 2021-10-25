@@ -316,7 +316,7 @@
 
   const r_name__users_activated = 'users activated';
 
-  let id__timer = null;
+  let id__timer = undefined;
 
   socket.on(e_msg__respond_row, _row => {
     console.log(_row);
@@ -332,6 +332,7 @@
   // };
 
   c_name__btn.onclick = () => {
+    console.log(id__timer);
     if (!id__timer || id__timer._destroyed === true) {
       socket.emit(e_msg__activate_communication);
       id__timer = setTimeout(() => {
