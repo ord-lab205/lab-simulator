@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Real Time</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/system.css">
+  <link rel="stylesheet" href="css/datepicker.css" />
+
+  
+</head>
+
+<body>
+  <div class="header">Real-Time Railway Control System</div>
+  <div class="content">
+    <div class="left">
+      <dl>
+        <dd><a href="index.html">Residence area</a></dd>
+
+      </dl>  
+            
+    </div>
+    <div class="right">
+      
+      <div class="dt-content">
+
+        <span id="bubble" class="gs-speakerXXX gs-speaker-left">
+          <span class="pulse"></span>
+          <span class="pulse"></span>
+          <span class="pulse"></span>
+          <span class="pulse"></span>
+          <span class="pulse"></span>
+          <span class="pulse2"></span>
+          <span class="pulse2"></span>
+          <span class="pulse2"></span>
+          <span class="pulse2"></span>
+          <span class="pulse2"></span>
+          </span>
+
+        <div class="msg">
+          <div class="msg-t">
+            Real-time alarm
+          </div>
+          <div class="msg-item">
+            <div class="msg-item-t">
+              <img src="css/imgs/alarm-yeelow.png" alt="">
+              <div class="msg-txt">
+              Alert! Noise is higher! 
+              </div>
+            </div>
+            <div class="msg-item-con">
+                <div class="diandian"></div>
+                <div class="msg-con-t">
+                  <p>Noise over : 90 hZ</p>
+                  <!-- <p>2020.04.06<span>20:50:10</span></p> -->
+                </div>
+              </div>
+          </div>
+
+
+          
+          <div class="msg-item">
+            <div class="msg-item-t">
+              <img src="css/imgs/alarm-yeelow.png" alt="">
+              <div class="msg-txt">
+              Alert! Vibration is higher!
+              </div>
+            </div>
+            
+            <div class="msg-item-con">
+                <div class="diandian"></div>
+                <div class="msg-con-t">
+                  <p>Vibration over: 85VhZ</p>
+                  <!-- <p>2020.04.05<span>20:50:10</span></p> -->
+                </div>
+              </div>
+          </div>
+        </div>
+        
+
+        <div class="tool">
+          
+          <p><button id="button_start">Start</button></p>
+
+          
+          
+            <div class="trainline">
+
+            
+
+
+            <div id ="container">
+              
+              
+
+              <div id ="animate">
+
+                <img id = "train_blue" src="/css/imgs/blue_train-01.png"/>
+
+
+                
+
+              </div>
+
+              
+              <!-- <canvas id="myCanvas" width="1300px" height="1300px"> </canvas> -->
+             
+            </div>
+
+           
+           
+          <button id="test" class="test">Start</button>
+          </div>
+
+
+          
+
+
+
+
+
+
+      
+        </div>
+        <div class="s1">
+          <div class="s1_a">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_b">
+              <!-- <div class="error">
+                <img src="css/imgs/alarm-blue.png" alt=""/>
+              </div> -->
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_c">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys3"></div>
+          </div>
+          <div class="s1_d">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_e">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys3"></div>
+          </div>
+        </div>
+        <div class="s2">
+          <div class="s1_a">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_b">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys4"></div>
+          </div>
+          <div class="s1_c">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_d">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys4"></div>
+          </div>
+          <div class="s1_e">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+        </div>
+        <div class="s3">
+          <div class="s1_a">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_b">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys2"></div>
+          </div>
+          <div class="s1_c">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys5"></div>
+          </div>
+          <div class="s1_d">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys2"></div>
+          </div>
+          <div class="s1_e">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys5"></div>
+          </div>
+          <div class="s1_f">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+        </div>
+        <div class="s4">
+          <div class="s1_a">
+              <!-- <div class="error">
+                <img src="css/imgs/alarm-blue.png" alt=""/>
+              </div> -->
+            <div class="x_shang x_shang1"></div>
+            <div class="x_xia x_xia1"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_b">
+              <!-- <div class="error">
+                <img src="css/imgs/alarm_red.png" alt=""/>
+              </div> -->
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys6"></div>
+          </div>
+          <div class="s1_c">
+            <!-- <div class="error">
+              <img src="css/imgs/alarm-yeelow.png" alt=""/>
+            </div> -->
+            <div class="x_shang x_shang1"></div>
+            <div class="x_xia x_xia1"></div>
+            <div class="x_sys6"></div>
+          </div>
+          <div class="s1_d">
+            <div class="notice">
+              <!-- <img src="css/imgs/alarm_red.png" alt=""/> -->
+            </div>
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_e">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+        </div>
+        <div class="s5">
+          <div class="s1_a">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_b">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_c">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_d">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_e">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+          <div class="s1_f">
+            <div class="x_shang"></div>
+            <div class="x_xia"></div>
+            <div class="x_sys1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+<script src="js/api2.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/system.js"></script>
+</html>
