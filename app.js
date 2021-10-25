@@ -9,6 +9,8 @@ const http = require('http');
 
 const morgan = require('morgan');
 
+const obj__oracle_controller = require('./src/controller/oracle');
+
 const HOST = process.env.HOST;
 const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
 
@@ -18,34 +20,33 @@ const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
   const http_server = http.createServer(app);
   const io = require('socket.io')(http_server);
   // const socket = io();
+  const router = express.Router();
 
   if (NODE_ENV === 'production') app.use(morgan('common', { stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }) }));
   else app.use(morgan('short', { stream: fs.createWriteStream(path.join(__dirname, 'access_dev.log'))}));
 
-  app.get('/', (req, res, next) => {
+  app.get('/', (req, res) => {
     console.log(req.url);
     res.status(200)
        .sendFile('index.html', { root: path.join(__dirname, 'public')});
-
-    // fn_handle__socket_io(io);
-
-    // res.end();
-  })
-
-  app.get('/bridge', (req, res, next) => {
-    console.log(req.url);
-    res.status(200)
-    res.sendFile('bridge.html', { root: path.join(__dirname, 'public')});
-
+  
     fn_handle__socket_io(io);
   });
 
-  app.get('/tunnel', (req, res, next) => {
+  app.get('/bridge', (req, res) => {
     console.log(req.url);
-    // res.status(200)
-    res.sendFile('tunnel.html', { root: path.join(__dirname, 'public')});
+    res.status(200)
+       .sendFile('bridge.html', { root: path.join(__dirname, 'public')});
+  
+    fn_handle__socket_io(io);
+  });
 
-    // fn_handle__socket_io(io);
+  app.get('/tunnel', (req, res) => {
+    console.log(req.url);
+    res.status(200)
+       .sendFile('tunnel.html', { root: path.join(__dirname, 'public')});
+  
+    fn_handle__socket_io(io);
   });
 
   app.use(express.static(path.join(__dirname, 'public')));
@@ -80,6 +81,8 @@ const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
 
 function fn_handle__socket_io(_io) {
   'use strict';
+  _io.disconnectSockets();
+
   _io.of('/').on('connection', _socket => {
     const e_msg__occur_warning = 'occur_warning';
     const e_msg__activate_communication = 'activate communication';
@@ -107,6 +110,10 @@ function fn_handle__socket_io(_io) {
       if (id__timer) clearTimeout(id__timer);
       _socket.leave(r_name__users_activated);
     });
+
+    _socket.on('disconnect', () => {
+      _socket.disconnect();
+    })
 
     setInterval(() => {
       _socket.to(r_name__users_activated).emit(e_msg__respond_row, {a: 1});
