@@ -12,25 +12,50 @@ const morgan = require('morgan');
 const HOST = process.env.HOST;
 const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
 
-let a = 0;
 
 (() => {
   const app = express();
   const http_server = http.createServer(app);
   const io = require('socket.io')(http_server);
+  // const socket = io();
 
   if (NODE_ENV === 'production') app.use(morgan('common', { stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }) }));
   else app.use(morgan('short', { stream: fs.createWriteStream(path.join(__dirname, 'access_dev.log'))}));
 
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.get('/', (req, res, next) => {
+    console.log(req.url);
+    res.status(200)
+       .sendFile('index.html', { root: path.join(__dirname, 'public')});
 
-  app.use((req, res, next) => {
-    res.redirect(301, '/');
-    next();
+    // fn_handle__socket_io(io);
+
+    // res.end();
+  })
+
+  app.get('/bridge', (req, res, next) => {
+    console.log(req.url);
+    res.status(200)
+    res.sendFile('bridge.html', { root: path.join(__dirname, 'public')});
+
+    fn_handle__socket_io(io);
   });
 
+  app.get('/tunnel', (req, res, next) => {
+    console.log(req.url);
+    // res.status(200)
+    res.sendFile('tunnel.html', { root: path.join(__dirname, 'public')});
+
+    // fn_handle__socket_io(io);
+  });
+
+  app.use(express.static(path.join(__dirname, 'public')));
+
+  // app.use((req, res, next) => {
+  //   res.redirect(301, '/');
+  //   next();
+  // });
+
   app.use((err, req, res, next) => {
-    console.log(1);
     res.status(500)
        .send('Occur error:')
        .json({
@@ -43,9 +68,13 @@ let a = 0;
 
   http_server.on('error', _err => console.log(`Error:\nListening\n${_err}`));
   http_server.on('request', (req, res) => {
-    const arr__env_factors = ['/', '/index.html', '/general.html', '/bridge.html', '/tunnel.html', '/animals.html'];
-    const bool__is_env_factor = arr__env_factors.includes(req.url);
-    if (bool__is_env_factor) fn_handle__socket_io(io);
+    // const arr__env_factors = ['/', '/index.html', '/general.html', '/bridge.html', '/tunnel.html', '/animals.html'];
+    // const bool__is_env_factor = arr__env_factors.includes(req.url);
+    // // console.log(bool__is_env_factor, req.url);
+    // if (bool__is_env_factor) {
+    //   fn_handle__socket_io(io);
+    //   res.end();
+    // }
   });
 })();
 
@@ -61,9 +90,13 @@ function fn_handle__socket_io(_io) {
 
     let id__timer;
 
-    _socket.on('error', )
+    _socket.on('error', _err => {
+      if (_err && _err.message === "unauthorized event") {
+        _socket.disconnect();
+      }
+    });
 
-    _socket.on(e_msg__occur_warning, _obj => fs.createWriteStream(path.join(__dirname, 'warning_data.log')))
+    _socket.on(e_msg__occur_warning, _obj => fs.createWriteStream(path.join(__dirname, 'warning_data.log')));
 
     _socket.on(e_msg__activate_communication, () => {
       _socket.join(r_name__users_activated);
@@ -77,7 +110,7 @@ function fn_handle__socket_io(_io) {
 
     setInterval(() => {
       _socket.to(r_name__users_activated).emit(e_msg__respond_row, {a: 1});
-    })
+    }, 2000);
   })
 }
 

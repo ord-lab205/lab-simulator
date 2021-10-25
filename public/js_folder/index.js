@@ -7,7 +7,6 @@ var pos2=0;
 var elem = document.getElementById("myAnimation");   
 const elem2 = document.getElementById("myAnimation2");
 
-
 //main function train 1 
 
 function myMove() {
