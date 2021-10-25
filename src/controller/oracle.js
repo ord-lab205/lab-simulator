@@ -2,7 +2,7 @@ const oracledb = require('oralcedb');
 const obj__oracle_config = require('../config/oracle');
 
 module.exports = {
-  name__context_object: 'obj_controller__oracle',
+  name__context_object: 'obj__oracle_controller',
 
   fn_oper__in_advance: async function () {
     try {
