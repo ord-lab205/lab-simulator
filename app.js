@@ -107,7 +107,7 @@ function fn_handle__socket_io(_io) {
       _socket.disconnect();
     })
 
-    setInterval(() => {
+    setInterval(async () => {
       const obj__a_row = await obj__oracle_controller.fn_dml_select__a_row();
       _socket.to(r_name__users_activated).emit(e_msg__respond_row, obj__a_row);
     }, 2000);
