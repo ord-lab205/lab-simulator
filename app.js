@@ -14,7 +14,7 @@ const morgan = require('morgan');
 const obj__oracle_controller = require('./src/controller/oracle');
 
 const HOST = process.env.HOST;
-const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
+const EXPOSE_HTTP_PORT = process.env.PORT;
 
 
 // Main
@@ -68,12 +68,10 @@ const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
     next(err);
   });
 
-  // http_server.listen(EXPOSE_HTTP_PORT, () => console.log(`http://${HOST}:${EXPOSE_HTTP_PORT}/`));
-  http_server.listen(process.env.PORT);
-
+  http_server.listen(EXPOSE_HTTP_PORT, () => console.log(`http://${HOST}:${EXPOSE_HTTP_PORT}/`));
 
   process
-  .once('SIGINT', await obj__oracle_controller.fn_oper__at_termination);
+    .once('SIGINT', await obj__oracle_controller.fn_oper__at_termination);
 })();
 
 // Functions
