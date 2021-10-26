@@ -1,4 +1,4 @@
-const oracledb = require('oralcedb');
+const oracledb = require('oracledb');
 const obj__oracle_config = require('../config/oracle');
 
 module.exports = {
