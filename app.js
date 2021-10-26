@@ -68,7 +68,9 @@ const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
     next(err);
   });
 
-  http_server.listen(EXPOSE_HTTP_PORT, () => console.log(`http://${HOST}:${EXPOSE_HTTP_PORT}/`));
+  // http_server.listen(EXPOSE_HTTP_PORT, () => console.log(`http://${HOST}:${EXPOSE_HTTP_PORT}/`));
+  http_server.listen(process.env.PORT);
+
 
   process
   .once('SIGINT', await obj__oracle_controller.fn_oper__at_termination);
