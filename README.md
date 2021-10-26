@@ -3,9 +3,6 @@
 ## 작성자
 `이진형`(bya2, byaa1972@gmail.com)
 
-## 설명
-`This`
-
 ## 개발 계획
 
 ```
@@ -13,7 +10,7 @@
 (완료) Static files 브라우저에 출력.
 
 - Arduino
-1. 아두이노 무선 연결
+1. 아두이노 무선 연결 (구매중)
    - Wireless module (x5)
    - Arudino Uno (+1)
    - Each Sensor (+1)
@@ -34,16 +31,32 @@
 ## 고려 사항
 
 ```
-(0929~) 오류를 포함할 수 있는 함수는 'try catch'을 통해 오류 발생 시 위치를 식별할 수 있도록 작성.
-(0929~) 일정량 이상의 코드를 포함하는 함수는 'Strict mode'로 작성.
-(0929~) 변수 및 함수명을 'Snake case'에 따라 작성.
+(진행) 오류를 포함할 수 있는 함수는 'try catch'을 통해 오류 발생 시 위치를 식별할 수 있도록 작성.
+(진행) 일정량 이상의 코드를 포함하는 함수는 'Strict mode'로 작성.
+(진행) 변수 및 함수명을 'Snake case'에 따라 작성.
 ```
 
 ## 진행 상황
 
-[**`날짜 별 진행 상황`**](./Progress.md)
+### 배포
+**`IIS`**
+![image](https://user-images.githubusercontent.com/61080445/138863424-8746d58b-b897-4a6d-831a-99f2b765da62.png)
+
+**`Browser`**
+![스크린샷(1)](https://user-images.githubusercontent.com/61080445/138863298-dacd5a61-ee79-43b0-b835-3175b1341d83.png)
 
 ## 에러 처리
+
+### iisnode
+
+**`에러`**
+```
+```
+
+**`해결`**
+```
+웹 애플리케이션을 퍼블리시하는 포트가 환경 변수 process.env.PORT가 되도록 변경.
+```
 
 ### Oracle Database 18c
 
