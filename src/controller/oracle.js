@@ -7,7 +7,7 @@ module.exports = {
   fn_oper__in_advance: async function () {
     try {
       await oracledb.createPool(obj__oracle_config);
-      this.conn = await this.oracledb.getConnection();
+      this.conn = await oracledb.getConnection();
     } catch (err) {
       const name__fn = 'fn_oper__in_advance';
       console.error(`Error:\n${__filename}\n${this.name__context_obj}.${name__fn}\n${err}`);
