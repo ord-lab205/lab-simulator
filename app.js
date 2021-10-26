@@ -18,11 +18,12 @@ const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
 
 
 // Main
-(() => {
+(async () => {
   const app = express();
   const http_server = http.createServer(app);
   const io = require('socket.io')(http_server);
-  const router = express.Router();
+
+  await obj__oracle_controller.fn_oper__in_advance();
 
   if (NODE_ENV === 'production') app.use(morgan('common', { stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }) }));
   else app.use(morgan('short', { stream: fs.createWriteStream(path.join(__dirname, 'access_dev.log'))}));
@@ -68,6 +69,9 @@ const EXPOSE_HTTP_PORT = process.env.EXPOSE_HTTP_PORT;
   });
 
   http_server.listen(EXPOSE_HTTP_PORT, () => console.log(`http://${HOST}:${EXPOSE_HTTP_PORT}/`));
+
+  process
+  .once('SIGINT', await obj__oracle_controller.fn_oper__at_termination);
 })();
 
 // Functions
