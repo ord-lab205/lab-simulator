@@ -303,48 +303,10 @@
       </div>
     </div>
   </div>
-  
-</body>
-<script type="module">
-  import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-  const socket = io();
-
-  const e_msg__occur_warning = 'occur_warning';
-  const e_msg__activate_communication = 'activate communication';
-  const e_msg__disactivate_communication = 'disactivate communication';
-  const e_msg__respond_row = 'respond_row';
-
-  const r_name__users_activated = 'users activated';
-
-  let id__timer = undefined;
-
-  socket.on(e_msg__respond_row, _row => {
-    console.log(_row);
-  });
-
-  const c_name__btn = document.querySelector('.btn.btn-primary.start');
-
-  c_name__btn.onclick = () => {
-    socket.emit(e_msg__activate_communication);
-    id__timer = setTimeout(() => {
-      socket.emit(e_msg__disactivate_communication);
-    }, 6000);
-  };
-
-  // c_name__btn.onclick = () => {
-  //   console.log(id__timer);
-  //   if (id__timer == undefined || id__timer._destroyed === true) {
-  //     socket.emit(e_msg__activate_communication);
-  //     id__timer = setTimeout(() => {
-  //       socket.emit(e_msg__disactivate_communication);
-  //     }, 6000);
-  //   }
-  // };
-</script>
 <script src="/js_folder/index.js"></script>
 <!-- <script src="api2.js"></script> -->
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
-
+</body>
 </html>

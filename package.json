@@ -1,19 +1,20 @@
 {
-  "name": "Source1",
+  "name": "ord-lab-205-monitoring-web-app",
   "version": "1.0.0",
   "description": "`이진형`(bya2, byaa1972@gmail.com)",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:dev": "cross-env NODE_ENV=development nodemon app",
+    "test:dev": "cross-env NODE_ENV=development nodemon app || pin",
     "test:prod": "cross-env NODE_ENV=production nodemon app",
-    "file:test": "cross-env NODE_ENV=production node test"
+    "file:test": "cross-env NODE_ENV=production node test",
+    "pino": "node server | pino-pretty"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bya2/lab-simulator.git"
   },
-  "keywords": [],
+  "keywords": ["mornitoring", "sensing"],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -21,14 +22,20 @@
   },
   "homepage": "https://github.com/bya2/lab-simulator#readme",
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-pino-logger": "^6.0.0",
     "morgan": "^1.10.0",
     "oracledb": "^5.3.0",
-    "socket.io": "^4.3.1"
+    "pino": "^7.1.0",
+    "socket.io": "^4.3.1",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "pino-pretty": "^7.2.0"
   }
 }

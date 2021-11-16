@@ -12,7 +12,7 @@ const elem2 = document.getElementById("myAnimation2");
 
 function myMove() {
   var id1 = setInterval(frame, 5);
-
+  
 
   
   function frame() {

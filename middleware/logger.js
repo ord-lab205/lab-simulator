@@ -17,7 +17,16 @@ const devOpts = {
 const isProd = process.env.NODE_ENV === 'production' ? true : false;
 
 let logger = pino(isProd ? {} : devOpts);
-let reqLogger = expressPino({ logger });
+let reqLogger = expressPino({ 
+  logger,
+  serializers: {
+    req: (req) => ({
+      method: req.method,
+      url: req.url,
+      user: req.raw.user,
+    }),
+  },
+});
 
 // if (isProd) {
 //   logger = pino();
