@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Real time</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+
+<link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/datepicker.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+
+   <div class="header">Real-Time Railway Control System</div>
+  <div class="content">
+   
+ 
+
+    <div class="left">
+      <dl>
+        <dd class="on"><a href="index.html">General</a></dd>
+          <!-- <dd><a href="system.html">Real-Time Data</a></dd>
+          <dd><a href="charts.html">Diagramma</a></dd>
+          <dd><a href="baojing.html">History Data</a></dd> -->
+
+      </dl>
+    </div>
+    <div class="right"> 
+      
+      <div class="dt-content">
+        <div class="dt-zhu">
+          <div class="dt-zhu-t">
+            <div class="dt-zhu-1"></div>
+            Railway road
+          </div>
+          <div class="dt-zhu-t">
+              <div >
+                <img src="/css/imgs/green.png" alt="">
+                <img src="css/imgs/red.png" alt="">
+              Good / Bad status </div>
+              
+            </div>
+
+          <div class="dt-zhu-t">
+              <img id="sensir" src="/css/imgs/111-b.png" alt="">
+              Sensor (Noise,Vibration) </div>
+
+        </div>
+
+       
+
+        <img class="myphoto" id="bulb1" src="/css/imgs/gray.png">
+        <img class="myphoto" id="bulb2" src="/css/imgs/gray.png">
+        <img class="myphoto" id="bulb3" src="/css/imgs/gray.png">
+        <img class="myphoto" id="bulb4" src="/css/imgs/gray.png">
+
+
+        <div class="dt-biao">
+         
+         
+          <img id="deer1" src="https://www.animatedimages.org/data/media/1130/animated-deer-image-0043.gif" />
+          <img id="deer2" src="https://www.animatedimages.org/data/media/1130/animated-deer-image-0049.gif" />
+          <img id="uy" src="/css/imgs/city.png">
+          
+            <div class="dt-left">A<br>Direction</div>
+            <div class="sensorname1">A1</div>
+            <div class="sensorname2">A2</div>
+            <div class="sensorname3">A3</div>
+            <div class="sensorname4">A4</div>
+
+            <div class="sensorname5">B1</div>
+            <div class="sensorname6">B2</div>
+            <div class="sensorname7">B3</div>
+            <div class="sensorname8">B4</div>
+
+            <div class="dt-con">
+              <div class="dt-center">
+                <img id="top_cross" src="/css/imgs/top_rail_cross.png">
+                <img id="down_cross" src="/css/imgs/top_rail_cross.png">
+              <!-- Monitoring -->
+              </div>
+            
+              <div class="dt-con-x">
+                <div class="dt-gui-x-left">
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-b">
+                      <!-- <img src="css/imgs/alarm_red.png"/> -->
+                    </div>
+                    <div class="dt-gui-x-2"></div>
+                  </div>
+                  <div class="dt-gui-x">
+                      <div class="dt-gui-cha"></div>
+                      <div class="dt-gui-x-b">
+                        <!-- <img src="css/imgs/alarm-yeelow.png"/> -->
+                      </div>
+                    </div>
+                  <div class="dt-gui-x">
+                      <div class="dt-gui-x-b">
+                        <!-- <img src="css/imgs/alarm-blue.png"/> -->
+                      </div>
+                    <div class="dt-gui-x-1"></div>
+                  </div>
+                  <div class="dt-gui-x"></div>
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-1"></div>
+                  </div>
+                </div>
+                <div class="dt-gui-x-right">
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-1"></div>
+                  </div>
+                  <div class="dt-gui-x">
+                      <div class="dt-gui-cha1"></div>
+                    </div>
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-1"></div>
+                  </div>
+                  <div class="dt-gui-x"></div>
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-2"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dt-gui-tcon">
+                <div class="dt-gui-left">
+                  <div class="dt-con-t">
+                    <div class="dt-gui-t-left">
+                      <div class="dt-gui-text">09817G</div>
+                      <div class="dt-gui-text">09818G</div>
+                      <div class="dt-gui-text">09819G</div>
+                      <div class="dt-gui-text">09820G</div>
+                      <div class="dt-gui-text">09810G</div>
+                    </div>
+                  </div>
+                  <div class="dt-con-t-b">
+                    <div class="dt-gui-t-left">
+                      <div class="dt-gui-text">09812G</div>
+                      <div class="dt-gui-text"></div>
+                      <div class="dt-gui-text">09814G</div>
+                      <div class="dt-gui-text">09815G</div>
+                      <div class="dt-gui-text">09816G</div>
+                    </div>
+                  </div>
+                </div>
+               <div class="dt-gui-right"> 
+                  <div class="dt-con-t">
+                    <div class="dt-gui-t-left">
+                      <div class="dt-gui-text">09813G</div>
+                      <div class="dt-gui-text">09814G</div>
+                      <div class="dt-gui-text">09815G</div>
+                      <div class="dt-gui-text">09815G</div>
+                      <div class="dt-gui-text">09816G</div>
+                    </div>
+                  </div>
+                  <div class="dt-con-t-b">
+                    <div class="dt-gui-t-left">
+                      <div class="dt-gui-text">09915G</div>
+                      <div class="dt-gui-text">09816G</div>
+                      <div class="dt-gui-text">09813G</div>
+                      <div class="dt-gui-text">09811G</div>
+                      <div class="dt-gui-text">09511G</div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="dt-con-x-b">
+                <div class="dt-gui-x-left">
+                    <div class="dt-gui-x">
+                      <div class="dt-gui-x-b dt-gui-x-b1">
+                        <!-- <img src="css/imgs/alarm_red.png"/> -->
+                      </div>
+                      <div class="dt-gui-x-2"></div>
+                    </div>
+                    <div class="dt-gui-x">
+                        <div class="dt-gui-cha"></div>
+                        <div class="dt-gui-x-b dt-gui-x-b1">
+                          <!-- <img src="css/imgs/alarm-yeelow.png"/> -->
+                        </div>
+                      </div>
+                    <div class="dt-gui-x">
+                        <div class="dt-gui-x-b dt-gui-x-b1">
+                          <!-- <img src="css/imgs/alarm-blue.png"/> -->
+                        </div>
+                      <div class="dt-gui-x-1"></div>
+                    </div>
+                    <div class="dt-gui-x">
+                      <!-- <div class="dt-gui-x-1"></div> -->
+                    </div>
+                    <div class="dt-gui-x">
+                      <div class="dt-gui-x-1"></div>
+                    </div>
+                </div>
+                <div class="dt-gui-x-right">
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-1"></div>
+                  </div>
+                  <div class="dt-gui-x">
+                      <div class="dt-gui-cha1"></div>
+                    </div>
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-1"></div>
+                  </div>
+                  <div class="dt-gui-x"></div>
+                  <div class="dt-gui-x">
+                    <div class="dt-gui-x-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="dt-right">B <br> Direction</div>
+           <div class="nodesensor">
+            <h4>
+            Residensial area: </br> Noise: <85dB / Vibration: <90VdB </br> 
+            Bridge area: </br> Noise: <75dB / Vibration: <80VdB </br>
+            Tunnel area: </br> Noise: <75dB / Vibration: <80VdB </br>  
+            </h4>
+                      
+                      
+          </div>
+        </div>
+
+      </div>
+        <div id ="myContainer"> 
+            <div id ="myAnimation">
+               <img src="/css/imgs/small_train_blue.png"/>   
+            </div>
+        </div>
+         <div class="myContainer2" id="myContainer2">
+          <img id="tunnel" src="/css/imgs/tunneis.png">
+          <img id="bridge" src="/css/imgs/bridgeis.png">
+          
+          <div id="myAnimation2">
+   
+            <img id="secondtrain" src="/css/imgs/small_train_blue.png"/>
+          </div>
+         </div> 
+         <div class="container-fluid">
+          <p>
+            <button onclick="myMove()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button> 
+            </p>
+            <!-- <p>
+              <button onclick="myTrain2()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button> 
+              </p> -->
+          <div class="table-rm">   
+            <div class="table-responsive">
+              <table class="table" id="general">
+                <tr>
+                  <td colspan="11" width="957" height="21" class="table-color">General</td>
+                  </tr>
+                  <tr>
+                  <td>Index</td>
+                  <td>Section</td>
+                  <td colspan="3">Vibration</td>
+                  <td colspan="3">Noise</td>
+                  <td>Dangers</td>
+                  <td>Status</td>
+                  <td>Notice</td>
+                  </tr>
+               
+
+              </table>
+
+              <table class="table" id="residensialarea">
+                <tr>
+            <td colspan="11" height="21" class="table-color">Residential Area</td>
+              </tr>
+              <tr>
+              <td rowspan="2" height="42">Index</td>
+              <td rowspan="2">Section</td>
+              <td colspan="3">Vibration</td>
+              <td colspan="3">Noise</td>
+              <td colspan="3">Dust</td>
+              </tr>
+              <tr>
+              <!-- <td height="21">V1</td>
+              <td>V2</td>
+              <td>V3</td>
+              <td>N1</td>
+              <td>N2</td>
+              <td>N3</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td> -->
+              </tr>
+              </table>
+
+              <table class="table" id="tunnell">
+                <tr>
+                  <td colspan="11" height="21" class="table-color">Tunnel</td>
+                  </tr>
+                  <tr>
+                  <td rowspan="2" height="42">Index</td>
+                  <td rowspan="2">Section</td>
+                  <td colspan="3">Vibration</td>
+                  <td colspan="3">Noise</td>
+                  <td colspan="3">Dust</td>
+                  </tr>
+                  <tr>
+                  <!-- <td height="21">V1</td>
+                  <td>V2</td>
+                  <td>V3</td>
+                  <td>N1</td>
+                  <td>N2</td>
+                  <td>N3</td>
+                  <td>x축</td>
+                  <td>y축</td>
+                  <td>z축</td> -->
+                  </tr>
+              </table>
+
+
+
+      
+
+              <table class="table" id="bridgee">
+                <tr>
+                  <td colspan="11" height="21" class="table-color">Bridge</td>
+                  </tr>
+                  <tr>
+                  <td rowspan="2" height="42">Index</td>
+                  <td rowspan="2">Section</td>
+                  <td colspan="3">Vibration</td>
+                  <td colspan="3">Noise</td>
+                  <td colspan="3">가속도</td>
+                  </tr>
+                  <tr>
+                  <!-- <td height="21">V1</td>
+                  <td>V2</td>
+                  <td>V3</td>
+                  <td>N1</td>
+                  <td>N2</td>
+                  <td>N3</td>
+                  <td>x축</td>
+                  <td>y축</td>
+                  <td>z축</td>
+                  </tr> -->
+
+              </table>
+
+
+
+
+              <!-- <table class="table" id="wildlife">
+                <tr>
+                  <td colspan="11" height="21" class="table-color">WildLife Area</td>
+                  </tr>
+                  <tr>
+                  <td rowspan="2" height="42">Index</td>
+                  <td rowspan="2">Section</td>
+                  <td colspan="3">Vibration</td>
+                  <td colspan="3">Noise</td>
+                  <td>Camera</td>
+                  <td>초음파</td>
+                  <td>적위선</td>
+                  </tr>
+                  <tr>
+                  <td height="21">V1</td>
+                  <td>V2</td>
+                  <td>V3</td>
+                  <td>N1</td>
+                  <td>N2</td>
+                  <td>N3</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  </tr>
+
+              </table> -->
+
+
+            </div>  
+          </div> 
+         </div>
+      <div class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition">
+        <div class="el-table__header-wrapper">
+             
+        </div>
+        <div class="el-table__body-wrapper is-scrolling-none">
+         
+        </div>
+ 
+        <div class="el-table__column-resize-proxy" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+<script src="api.js"></script>
+<!-- <script src="api2.js"></script> -->
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+
+</html>
