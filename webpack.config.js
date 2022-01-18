@@ -1,7 +1,7 @@
 const process = require("process");
 const path = require("path");
 const dotenv = require("dotenv");
-const nodeExternals = require('webpack-node-externals')
+const nodeExternals = require("webpack-node-externals");
 
 // module.exports = {
 //   target: "node",

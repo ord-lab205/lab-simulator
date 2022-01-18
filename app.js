@@ -16,13 +16,14 @@ const app = express();
 // 미들웨어: 라우팅, 정적 파일 처리
 app.use(require("./api/index"));
 app.use(express.static(path.join(__dirname, "public")));
+console.log("OKOK");
 
 // 미들웨어: 에러 처리
 app.use((req, res, next) => {
   next(createError(404));
 });
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).send("error");
+  res.status(err.status || 500).end("error") ;
 });
 
 module.exports = app;
