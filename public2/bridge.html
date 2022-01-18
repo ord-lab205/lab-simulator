@@ -17,7 +17,7 @@
  
 
 <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="/css/tunnel.css">
+  <link rel="stylesheet" href="css/bridge.css">
   <link rel="stylesheet" href="css/datepicker.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -34,8 +34,8 @@
       <dl>
         <dd><a href="General.html">General</a></dd>
         <dd><a href="index.html">Residence area</a></dd>
-          <dd><a href="/bridge.html">Bridge</a></dd>
-          <dd   class="on"><a href="/tunnel.html">Tunnel</a></dd>
+          <dd class="on"><a href="/bridge.html">Bridge</a></dd>
+          <dd><a href="/tunnel.html">Tunnel</a></dd>
           <dd><a href="/animals.html">Animals</a></dd>
           <dd><a href="charts.html">Diagramma</a></dd>
           <dd><a href="baojing.html">History Data</a></dd>
@@ -80,15 +80,15 @@
           <!-- <img id="uy" src="/css/imgs/city.png"> -->
           
             <div class="dt-left">A<br>Direction</div>
-            <!-- <div class="sensorname1">A1</div> -->
-            <!-- <div class="sensorname2">A2</div> -->
-            <div class="sensorname3">C3</div>
-            <div class="sensorname4">C4</div>
+            <div class="sensorname1">B1</div>
+            <div class="sensorname2">B2</div>
+            <div class="sensorname3">B3</div>
+            <div class="sensorname4">B4</div>
 
-            <div class="sensorname5">C5</div>
-            <div class="sensorname6">C6</div>
-            <div class="sensorname7">C7</div>
-            <div class="sensorname8">C8</div>
+            <div class="sensorname5">B5</div>
+            <div class="sensorname6">B6</div>
+            <div class="sensorname7">B7</div>
+            <div class="sensorname8">B8</div>
 
             <div class="dt-con">
               <div class="dt-center">
@@ -229,8 +229,8 @@
            <div class="nodesensor">
             <h4>
             <!-- Residensial area: </br> Noise: <85dB / Vibration: <90VdB </br>  -->
-            <!-- Bridge area: </br> Noise: <75dB / Vibration: <80VdB </br> -->
-            Tunnel area: </br> Noise: <75dB / Vibration: <80VdB </br>  
+            Bridge area: </br> Noise: <75dB / Vibration: <80VdB </br>
+            <!-- Tunnel area: </br> Noise: <75dB / Vibration: <80VdB </br>   -->
             </h4>
                       
                       
@@ -240,25 +240,23 @@
       </div>
         <div id ="myContainer"> 
             <div id ="myAnimation">
-               <img src="https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg" />   
+               <img src="/css/imgs/small_train_blue.png" />   
             </div>
-        </div>
+        </div>12
          <div class="myContainer2" id="myContainer2">
-         
-          <img id="tunnel" src="/css/imgs/tunneis.png">
-          <img id="tunnel2" src="/css/imgs/tunneis.png">
-         
-          <!-- <img id="bridge" src="/css/imgs/bridgeis.png"> -->
+          <!-- <img id="tunnel" src="/css/imgs/tunneis.png"> -->
+          <img id="bridge2" src="/css/imgs/bridge2.png">
+          <img id="bridge" src="/css/imgs/bridgeis.png">
           
           <div id="myAnimation2">
    
-            <img id="secondtrain" src="https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg" />
+            <img id="secondtrain" src="/css/imgs/small_train_blue.png" />
           </div>
          </div> 
          <div class="container-fluid">
           <p>
             <button onclick="myMove()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button> 
-            <button id="tab" onclick="myApp.printTable()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Information </button>  
+            <button id="tab" onclick="myApp.printTable()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Information </button>   
           </p>
             <!-- <p>
               <button onclick="myTrain2()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button> 
@@ -313,7 +311,7 @@
   </div>
   
 </body>
-<script src="/js_folder/tunnel.js"></script>
+<script src="/js_folder/bridge.js"></script>
 <!-- <script src="api2.js"></script> -->
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>

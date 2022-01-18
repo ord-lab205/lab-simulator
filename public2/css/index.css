@@ -364,42 +364,42 @@ table{
   margin-left: 10px;
 }
 
-  #myContainer {
-    width: 1465px;
-    height: 50px;
-    position: relative;
-    margin-left: 160px;
-    margin-top: -930px;
-    /* background-color: yellow; */
-  }
-  #myAnimation {
-    margin-top: -10px; 
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    /* background-color: red; */
-    /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg'); */ 
-  }
-  #myContainer2{
-    width: 1465px;
-    height: 50px;
-    position: relative;
-    margin-left: 190px;
-    margin-top: 40px;
-    z-index: 0;
-    /* background-color: yellow; */
-  }
+#myContainer {
+  width: 1465px;
+  height: 50px;
+  position: relative;
+  margin-left: 160px;
+  margin-top: -930px;
+  /* background-color: yellow; */
+}
+#myAnimation {
+  margin-top: -10px; 
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  /* background-color: red; */
+  /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg'); */ 
+}
+#myContainer2{
+  width: 1465px;
+  height: 50px;
+  position: relative;
+  margin-left: 190px;
+  margin-top: 40px;
+  z-index: 0;
+  /* background-color: yellow; */
+}
 
-  #myAnimation2 {
-    margin-top: -0px;
-    margin-left: 1390px; 
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    z-index: 0;
-    /* background-color: red; */
-    /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg');  */
-  }
+#myAnimation2 {
+  margin-top: -0px;
+  margin-left: 1390px; 
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 0;
+  /* background-color: red; */
+  /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg');  */
+}
 
   .myrasim {
     width: 35px;
@@ -591,7 +591,22 @@ table{
 
 }
 
-.table-color {
-  background-color: #4472C4; color:white;
- }
- 
+#details{
+  position: absolute;
+  right: 50px;
+  font-size: 20px;
+}
+
+
+#uy2{
+  position: absolute;
+  height: 90px;
+  /* right: 500px; */
+  left: 330px;
+  top: 220px;
+}
+
+#tab{
+  position: relative;
+  left: 1600px;
+}

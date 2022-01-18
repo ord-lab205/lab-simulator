@@ -8,13 +8,19 @@
     "test:dev": "cross-env NODE_ENV=development nodemon app || pin",
     "test:prod": "cross-env NODE_ENV=production nodemon app",
     "file:test": "cross-env NODE_ENV=production node test",
-    "pino": "node server | pino-pretty"
+    "start": "node ./dist/index.js",
+    "start:dev": "node ./dist/main.js",
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bya2/lab-simulator.git"
   },
-  "keywords": ["mornitoring", "sensing"],
+  "keywords": [
+    "mornitoring",
+    "sensing"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -22,20 +28,22 @@
   },
   "homepage": "https://github.com/bya2/lab-simulator#readme",
   "dependencies": {
-    "app-root-path": "^3.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-pino-logger": "^6.0.0",
     "morgan": "^1.10.0",
     "oracledb": "^5.3.0",
-    "pino": "^7.1.0",
-    "socket.io": "^4.3.1",
-    "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.5"
+    "socket.io": "^4.3.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.14",
-    "pino-pretty": "^7.2.0"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
   }
 }

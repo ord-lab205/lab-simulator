@@ -12,9 +12,6 @@ const elem2 = document.getElementById("myAnimation2");
 
 function myMove() {
   var id1 = setInterval(frame, 5);
-  
-
-  
   function frame() {
     if (pos == 1465) {
       pos = 0;
@@ -50,7 +47,7 @@ function myTrain2() {
       document.getElementById('bulb3').src='/css/imgs/gray.png'
       document.getElementById('bulb4').src='/css/imgs/gray.png'
       pos2 = 0;
-      elem.style.left = 0 + 'px'; 
+      elem.style.left = 0 + 'px';
       elem2.style.left = 0 + 'px';
 
     } else {
@@ -78,12 +75,12 @@ function randomInteger(min, max) {
   var items = ['Clear', 'Fog', 'Clear', 'Snow', 'Rain', 'Clear'];
 
 
-  // function random_item2(items2)
-  // {  
-  // return items2[Math.floor(Math.random()*items2.length)];    
-  // }
+  function random_item2(items2)
+  {  
+  return items2[Math.floor(Math.random()*items2.length)];    
+  }
   
-  // var items2 = ['Animal Detected', 'No Animals', 'No Animals', 'No Animals'];
+  var items2 = ['Animal Detected', 'No Animals', 'No Animals', 'No Animals'];
 
 
 
@@ -91,14 +88,14 @@ function randomInteger(min, max) {
 // intert rows function
 
 function myFunction() {
-    var sensorName1 = "B1";
-    var sensorName2 = "B2";
-    var sensorName3 = "B3";
-    var sensorName4 = "B4";
-    var sensorName5 = "B5";
-    var sensorName6 = "B6";
-    var sensorName7 = "B7";
-    var sensorName8 = "B8";
+    var sensorName1 = "D1";
+    var sensorName2 = "D2";
+    var sensorName3 = "D3";
+    var sensorName4 = "D4";
+    var sensorName5 = "D1";
+    var sensorName6 = "D2";
+    var sensorName7 = "D3";
+    var sensorName8 = "D4";
     var table = document.getElementById("table");
     var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
@@ -137,9 +134,9 @@ function myFunction() {
     
     //main function to insert datas
     if (pos == 210) {
-            cell9.innerHTML = random_item(items);
+            cell9.innerHTML = random_item2(items2);
           }else {
-            cell9.innerHTML = random_item(items);
+            cell9.innerHTML = random_item2(items2);
           }
     if (pos == 210 || pos2 == -210){
 
@@ -193,9 +190,9 @@ function myFunction() {
       }
           
       if (pos == 450){
-        cell9.innerHTML = random_item(items);
+        cell9.innerHTML = random_item2(items2);
       }else {
-        cell9.innerHTML = random_item(items);
+        cell9.innerHTML = random_item2(items2);
         
       }
 
@@ -236,7 +233,7 @@ function myFunction() {
 
     } else if (pos == 900 || pos2 == -900){
 
-      cell9.innerHTML = random_item(items);
+      cell9.innerHTML = random_item2(items2);
       
       if(pos==900){
         cell2.innerHTML = sensorName3;
@@ -282,7 +279,7 @@ function myFunction() {
 
     } else if (pos == 1150 || pos2 == - 1150){
 
-      cell9.innerHTML = random_item(items);
+      cell9.innerHTML = random_item2(items2);
 
 
 

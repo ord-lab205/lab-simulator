@@ -18,8 +18,8 @@
 
 <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/datepicker.css" />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/datepicker.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
 </head>
 
 <body>
@@ -32,10 +32,13 @@
 
     <div class="left">
       <dl>
-        <dd class="on"><a href="index.html">General</a></dd>
-          <!-- <dd><a href="system.html">Real-Time Data</a></dd>
+        <dd><a href="General.html">General</a></dd>
+        <dd class="on"><a href="index.html">Residence area</a></dd>
+          <dd><a href="/bridge.html">Bridge</a></dd>
+          <dd><a href="/tunnel.html">Tunnel</a></dd>
+          <dd><a href="/animals.html">Animals</a></dd>
           <dd><a href="charts.html">Diagramma</a></dd>
-          <dd><a href="baojing.html">History Data</a></dd> -->
+          <dd><a href="baojing.html">History Data</a></dd>
 
       </dl>
     </div>
@@ -60,7 +63,6 @@
               Sensor (Noise,Vibration) </div>
 
         </div>
-
        
 
         <img class="myphoto" id="bulb1" src="/css/imgs/gray.png">
@@ -68,13 +70,16 @@
         <img class="myphoto" id="bulb3" src="/css/imgs/gray.png">
         <img class="myphoto" id="bulb4" src="/css/imgs/gray.png">
 
+        <a href="system.html" id="details" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Details </a>
 
         <div class="dt-biao">
          
+          
          
-          <img id="deer1" src="https://www.animatedimages.org/data/media/1130/animated-deer-image-0043.gif" />
-          <img id="deer2" src="https://www.animatedimages.org/data/media/1130/animated-deer-image-0049.gif" />
+          <!-- <img id="deer1" src="https://www.animatedimages.org/data/media/1130/animated-deer-image-0043.gif" /> -->
+          <!-- <img id="deer2" src="https://www.animatedimages.org/data/media/1130/animated-deer-image-0049.gif" /> -->
           <img id="uy" src="/css/imgs/city.png">
+          <img id="uy2" src="/css/imgs/city2.png">
           
             <div class="dt-left">A<br>Direction</div>
             <div class="sensorname1">A1</div>
@@ -82,10 +87,10 @@
             <div class="sensorname3">A3</div>
             <div class="sensorname4">A4</div>
 
-            <div class="sensorname5">B1</div>
-            <div class="sensorname6">B2</div>
-            <div class="sensorname7">B3</div>
-            <div class="sensorname8">B4</div>
+            <div class="sensorname5">A5</div>
+            <div class="sensorname6">A6</div>
+            <div class="sensorname7">A7</div>
+            <div class="sensorname8">A8</div>
 
             <div class="dt-con">
               <div class="dt-center">
@@ -224,11 +229,14 @@
             
             <div class="dt-right">B <br> Direction</div>
            <div class="nodesensor">
+
             <h4>
             Residensial area: </br> Noise: <85dB / Vibration: <90VdB </br> 
-            Bridge area: </br> Noise: <75dB / Vibration: <80VdB </br>
-            Tunnel area: </br> Noise: <75dB / Vibration: <80VdB </br>  
+            <!-- Bridge area: </br> Noise: <75dB / Vibration: <80VdB </br> -->
+            <!-- Tunnel area: </br> Noise: <75dB / Vibration: <80VdB </br>   -->
             </h4>
+
+            
                       
                       
           </div>
@@ -237,152 +245,50 @@
       </div>
         <div id ="myContainer"> 
             <div id ="myAnimation">
-               <img src="/css/imgs/small_train_blue.png"/>   
+               <img src="css/imgs/small_train_blue.png" />   
             </div>
         </div>
          <div class="myContainer2" id="myContainer2">
-          <img id="tunnel" src="/css/imgs/tunneis.png">
-          <img id="bridge" src="/css/imgs/bridgeis.png">
+          <!-- <img id="tunnel" src="/css/imgs/tunneis.png"> -->
+          <!-- <img id="bridge" src="/css/imgs/bridgeis.png"> -->
           
           <div id="myAnimation2">
    
-            <img id="secondtrain" src="/css/imgs/small_train_blue.png"/>
+            <img id="secondtrain" src="css/imgs/small_train_blue.png"/>
           </div>
          </div> 
          <div class="container-fluid">
           <p>
-            <button onclick="myMove()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button> 
+            <button onclick="myMove()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button>
+            <button id="tab" onclick="myApp.printTable()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Information </button> 
             </p>
             <!-- <p>
               <button onclick="myTrain2()" class="btn btn-primary" style="margin-top:15px" style="margin-bottom:15px;"> Start </button> 
               </p> -->
-          <div class="table-rm">   
-            <div class="table-responsive">
-              <table class="table" id="general">
+          <div  class="table-rm">   
+            <div id="tablee" class="table-responsive">
+              <table class="table" id="table">
                 <tr>
-                  <td colspan="11" width="957" height="21" class="table-color">General</td>
-                  </tr>
-                  <tr>
-                  <td>Index</td>
-                  <td>Section</td>
-                  <td colspan="3">Vibration</td>
-                  <td colspan="3">Noise</td>
-                  <td>Dangers</td>
-                  <td>Status</td>
-                  <td>Notice</td>
-                  </tr>
-               
+                  <th rowspan="2">ID</th>
+                  <th rowspan="2">Sensor ID</th>
+                  <th colspan="3">Noise (dB)</th>      
+                  <th colspan="3">Vibration (VdB)</th>
+                  <th rowspan="2">Damages</th>
+                  <th rowspan="2">Status</th>
+                  <th rowspan="2">Notice</th>
+                </tr>
 
+                <tr>
+                
+                  <th>N1(100m)</th>
+                  <th>N2(300m)</th>
+                  <th>N3(500m)</th>
+
+                  <th>V1(100m)</th>
+                  <th>V2(300m)</th>
+                  <th>V3(500m)</th>
+                </tr>
               </table>
-
-              <table class="table" id="residensialarea">
-                <tr>
-            <td colspan="11" height="21" class="table-color">Residential Area</td>
-              </tr>
-              <tr>
-              <td rowspan="2" height="42">Index</td>
-              <td rowspan="2">Section</td>
-              <td colspan="3">Vibration</td>
-              <td colspan="3">Noise</td>
-              <td colspan="3">Dust</td>
-              </tr>
-              <tr>
-              <!-- <td height="21">V1</td>
-              <td>V2</td>
-              <td>V3</td>
-              <td>N1</td>
-              <td>N2</td>
-              <td>N3</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td> -->
-              </tr>
-              </table>
-
-              <table class="table" id="tunnell">
-                <tr>
-                  <td colspan="11" height="21" class="table-color">Tunnel</td>
-                  </tr>
-                  <tr>
-                  <td rowspan="2" height="42">Index</td>
-                  <td rowspan="2">Section</td>
-                  <td colspan="3">Vibration</td>
-                  <td colspan="3">Noise</td>
-                  <td colspan="3">Dust</td>
-                  </tr>
-                  <tr>
-                  <!-- <td height="21">V1</td>
-                  <td>V2</td>
-                  <td>V3</td>
-                  <td>N1</td>
-                  <td>N2</td>
-                  <td>N3</td>
-                  <td>x축</td>
-                  <td>y축</td>
-                  <td>z축</td> -->
-                  </tr>
-              </table>
-
-
-
-      
-
-              <table class="table" id="bridgee">
-                <tr>
-                  <td colspan="11" height="21" class="table-color">Bridge</td>
-                  </tr>
-                  <tr>
-                  <td rowspan="2" height="42">Index</td>
-                  <td rowspan="2">Section</td>
-                  <td colspan="3">Vibration</td>
-                  <td colspan="3">Noise</td>
-                  <td colspan="3">가속도</td>
-                  </tr>
-                  <tr>
-                  <!-- <td height="21">V1</td>
-                  <td>V2</td>
-                  <td>V3</td>
-                  <td>N1</td>
-                  <td>N2</td>
-                  <td>N3</td>
-                  <td>x축</td>
-                  <td>y축</td>
-                  <td>z축</td>
-                  </tr> -->
-
-              </table>
-
-
-
-
-              <!-- <table class="table" id="wildlife">
-                <tr>
-                  <td colspan="11" height="21" class="table-color">WildLife Area</td>
-                  </tr>
-                  <tr>
-                  <td rowspan="2" height="42">Index</td>
-                  <td rowspan="2">Section</td>
-                  <td colspan="3">Vibration</td>
-                  <td colspan="3">Noise</td>
-                  <td>Camera</td>
-                  <td>초음파</td>
-                  <td>적위선</td>
-                  </tr>
-                  <tr>
-                  <td height="21">V1</td>
-                  <td>V2</td>
-                  <td>V3</td>
-                  <td>N1</td>
-                  <td>N2</td>
-                  <td>N3</td>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  </tr>
-
-              </table> -->
-
-
             </div>  
           </div> 
          </div>
@@ -391,7 +297,6 @@
              
         </div>
         <div class="el-table__body-wrapper is-scrolling-none">
-         
         </div>
  
         <div class="el-table__column-resize-proxy" style="display: none;"></div>
@@ -400,7 +305,7 @@
   </div>
   
 </body>
-<script src="api.js"></script>
+<script src="/js_folder/index.js"></script>
 <!-- <script src="api2.js"></script> -->
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>

@@ -35,19 +35,24 @@ function myMove() {
 }
 
 
-//main function of train
-function Train() {  
+//main function train 2
+
+function myTrain2() {  
   var id2 = setInterval(frame, 5);
   function frame() {
     if (pos2 == -1465) {
       clearInterval(id2);
+      document.getElementById('bulb1').src='/css/imgs/gray.png'
+      document.getElementById('bulb2').src='/css/imgs/gray.png'
+      document.getElementById('bulb3').src='/css/imgs/gray.png'
+      document.getElementById('bulb4').src='/css/imgs/gray.png'
       pos2 = 0;
       elem.style.left = 0 + 'px'; 
       elem2.style.left = 0 + 'px';
 
     } else {
       if ((pos2 == -210) || (pos2 == -450) || (pos2== -900) || (pos2 == -1150)){
-          FunctionOfNoiseAndVibration()
+          myFunction()
       } 
       pos2--; 
       elem2.style.left = pos2 + 'px'; 
@@ -55,12 +60,14 @@ function Train() {
     }
   }
 }
-//random integer of NOISE and Vibraion Variable
+
+//random integer for NOISE and VARIABLE
 function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function random (items)
+
+  function random_item(items)
   {  
   return items[Math.floor(Math.random()*items.length)];    
   }
@@ -68,15 +75,12 @@ function randomInteger(min, max) {
   var items = ['Clear', 'Fog', 'Clear', 'Snow', 'Rain', 'Clear'];
 
 
-
-
-
-  function random_item2(items2)
-  {  
-  return items2[Math.floor(Math.random()*items2.length)];    
-  }
+  // function random_item2(items2)
+  // {  
+  // return items2[Math.floor(Math.random()*items2.length)];    
+  // }
   
-  var items2 = ['Animal Detected', 'No Animals', 'No Animals', 'No Animals'];
+  // var items2 = ['Animal Detected', 'No Animals', 'No Animals', 'No Animals'];
 
 
 
@@ -84,14 +88,14 @@ function randomInteger(min, max) {
 // intert rows function
 
 function myFunction() {
-    var sensorName1 = "C1";
-    var sensorName2 = "C2";
-    var sensorName3 = "C3";
-    var sensorName4 = "C4";
-    var sensorName5 = "C5";
-    var sensorName6 = "C6";
-    var sensorName7 = "C7";
-    var sensorName8 = "C8";
+    var sensorName1 = "A1";
+    var sensorName2 = "A2";
+    var sensorName3 = "A3";
+    var sensorName4 = "A4";
+    var sensorName5 = "A5";
+    var sensorName6 = "A6";
+    var sensorName7 = "A7";
+    var sensorName8 = "A8";
     var table = document.getElementById("table");
     var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
@@ -128,9 +132,9 @@ function myFunction() {
     cell1.innerHTML = id;
     id++;
     
-    //main function to insert data
+    //main function to insert datas
     if (pos == 210) {
-            cell9.innerHTML = random_item(items);
+      cell9.innerHTML = random_item(items);
           }else {
             cell9.innerHTML = random_item(items);
           }
@@ -324,12 +328,20 @@ function myFunction() {
     }
   }
 
+
+
   var myApp = new function () {
     this.printTable = function () {
         var tab = document.getElementById('table');
-        var win = window.open('', '', 'height=700,width=700');
+
+        table.rel = 'stylesheet';  
+        table.type = 'text/css'; 
+        table.href = 'css/index.css';
+
+        var win = window.open('', '', 'height=720,width=1280');
         win.document.write(tab.outerHTML);
         win.document.close();
         // win.print();
     }
 }
+

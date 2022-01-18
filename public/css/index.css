@@ -373,9 +373,9 @@ table{
     /* background-color: yellow; */
   }
   #myAnimation {
-    margin-top: -20px; 
-    width: 100px;
-    height: 100px;
+    margin-top: -10px; 
+    width: 200px;
+    height: 200px;
     position: absolute;
     /* background-color: red; */
     /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg'); */ 
@@ -391,10 +391,10 @@ table{
   }
 
   #myAnimation2 {
-    margin-top: -10px;
+    margin-top: -0px;
     margin-left: 1390px; 
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     position: absolute;
     z-index: 0;
     /* background-color: red; */
@@ -591,22 +591,7 @@ table{
 
 }
 
-#details{
-  position: absolute;
-  right: 50px;
-  font-size: 20px;
-}
-
-
-#uy2{
-  position: absolute;
-  height: 90px;
-  /* right: 500px; */
-  left: 330px;
-  top: 220px;
-}
-
-#tab{
-  position: relative;
-  left: 1600px;
-}
+.table-color {
+  background-color: #4472C4; color:white;
+ }
+ 

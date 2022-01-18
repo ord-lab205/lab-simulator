@@ -352,7 +352,7 @@ table{
   width: 100%
 }
 .container-fluid {
-  margin-top: -220px;
+  margin-top: 230px;
   align-items: center;
   background-color: white;
   display: block;
@@ -364,8 +364,42 @@ table{
   margin-left: 10px;
 }
 
- 
+  #myContainer {
+    width: 1465px;
+    height: 50px;
+    position: relative;
+    margin-left: 160px;
+    margin-top: -930px;
+    /* background-color: yellow; */
+  }
+  #myAnimation {
+    margin-top: -10px; 
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    /* background-color: red; */
+    /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg'); */ 
+  }
+  #myContainer2{
+    width: 1465px;
+    height: 50px;
+    position: relative;
+    margin-left: 190px;
+    margin-top: 40px;
+    z-index: 0;
+    /* background-color: yellow; */
+  }
 
+  #myAnimation2 {
+    margin-top: -0px;
+    margin-left: 1390px; 
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 0;
+    /* background-color: red; */
+    /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg');  */
+  }
 
   .myrasim {
     width: 35px;
@@ -390,8 +424,8 @@ table{
     width: 50px;
     height: 50px;
     position: relative;
-    left: 500px;
-    top: 80px;
+    right:-439px;
+    top: 50px;
     
       
   }
@@ -417,6 +451,16 @@ table{
     right:-1280px;
     top: 50px;
       
+  }
+
+
+  #secondtrain{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    position: relative;
+    z-index: auto;
+   /* right: -66px; */
+    /*  top: -8px; */
   }
 
 .sensorname1{
@@ -477,13 +521,27 @@ table{
 }
 
 
+#bridge{
+  position: absolute;
+  height: 130px;
+  width: 500px;
+  left: 115px;
+  top: -25px;
+  z-index: 10;
+}
+
+#tunnel{
+  height: 60px;
+  width: 400px;
+  position: absolute;
+  right: 195px;
+  top: 2px;
+  z-index: 10000000000;
+}
 
 #sensir{
-  position: absolute;
-  top: 2px;
-  right: 725px;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 35px;
 }
 
 table,th,td{
@@ -495,94 +553,45 @@ table{
   table-layout: fixed;  
 }
 
-#trainroad{
-  position: absolute;
-  height: 640px;
-  top: 135px;
-  left: 570px;
-  
-}
 
-
-#sen1{
-  position: absolute;
-  height: 40px;
-  left: 500px;
-  top: 420px;
-}
-#sen2{
-  position: absolute;
-  height: 40px;
-  position: absolute;
-  height: 40px;
-  left: 860px;
-  top: 90px;
-}
-#sen3{
-  position: absolute;
-  height: 40px;
-  left: 1240px;
-  top: 420px;  
-}
-#sen4{
-  position: absolute;
-  height: 40px;
-  position: absolute;
-  height: 40px;
-  left: 870px;
-  top: 790px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.space {
+#top_cross {
   position: relative;
-  left: 750px;
-  top: 240px;
-  width: 200px;
-  height: 200px;
-  margin: 3em;
-}
-.space > div {
-  position: absolute;
-  border-radius: 100%;
-}
-.planet {
-  top: 50px; right: 50px;
-  width: 100px;
-  height: 100px;  
-  /* background-color: #ccc; */
-  /* box-shadow: inset -30px -30px 30px rgba(0,0,0,0.25); */
-}
-.orbit {
-  top: -200px; right: -200px;
-  width: 600px; height: 600px;
-  /* border: solid 1px green;     */
-}
-.sat {
-  position: absolute;
-  width: 100px;
   height: 100px;
+  top: -80px;
   
-  /* background-image: url('https://www.flaticon.com/svg/static/icons/svg/3774/3774275.svg'); */
-  /* background-color:red; */
-  /* box-shadow: inset -10px -10px 10px rgba(0,0,0,0.25); */
 }
 
-/* .sat_train{
+#down_cross {
   position: absolute;
-  padding-top: 350px;
-} */
+  height: 100px;
+  top: 105px;
+  right: 65px;
+
+}
+
+#uy{
+  position: absolute;
+  height: 120px;
+  right: 390px;
+  top: 85px;
+}
+
+#deer1 {
+  position: absolute;
+  left: 550px;
+  top: 80px;
+  height: 80px;
+}
+
+#deer2 {
+  position: absolute;
+  left: 850px;
+  height: 100px;
+
+
+}
+
+.table-color {
+  background-color: #4472C4; color:white;
+ }
+ 

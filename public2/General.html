@@ -7,19 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Real time</title>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  
 
-<link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/datepicker.css" />
-  <link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/general.css">
+  <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+  <!-- <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
 </head>
 
 <body>
@@ -32,13 +32,16 @@
 
     <div class="left">
       <dl>
-        <dd class="on"><a href="index.html">General</a></dd>
-          <!-- <dd><a href="system.html">Real-Time Data</a></dd>
+        <dd class="on"><a href="General.html">General</a></dd>
+        <dd><a href="index.html">Residence area</a></dd>
+          <dd><a href="/bridge.html">Bridge</a></dd>
+          <dd><a href="/tunnel.html">Tunnel</a></dd>
+          <dd><a href="/animals.html">Animals</a></dd>
           <dd><a href="charts.html">Diagramma</a></dd>
-          <dd><a href="baojing.html">History Data</a></dd> -->
-
+          <dd><a href="baojing.html">History Data</a></dd>
       </dl>
     </div>
+
     <div class="right"> 
       
       <div class="dt-content">
@@ -258,22 +261,36 @@
               </p> -->
           <div class="table-rm">   
             <div class="table-responsive">
-              <table class="table" id="general">
+            
+            
+              <table class="table" id="intersection">
                 <tr>
-                  <td colspan="11" width="957" height="21" class="table-color">General</td>
+                  <td colspan="11" height="21" class="table-color">Intersection</td>
                   </tr>
                   <tr>
-                  <td>Index</td>
-                  <td>Section</td>
+                  <td rowspan="2" height="42">Index</td>
+                  <td rowspan="2">Section</td>
                   <td colspan="3">Vibration</td>
                   <td colspan="3">Noise</td>
-                  <td>Dangers</td>
-                  <td>Status</td>
-                  <td>Notice</td>
+                  <td colspan="3">Dust</td>
                   </tr>
-               
-
+                  <tr>
+                  <!-- <td height="21">V1</td>
+                  <td>V2</td>
+                  <td>V3</td>
+                  <td>N1</td>
+                  <td>N2</td>
+                  <td>N3</td>
+                  <td>x축</td>
+                  <td>y축</td>
+                  <td>z축</td> -->
+                  </tr>
               </table>
+
+
+
+
+
 
               <table class="table" id="residensialarea">
                 <tr>
@@ -400,10 +417,11 @@
   </div>
   
 </body>
-<script src="api.js"></script>
-<!-- <script src="api2.js"></script> -->
+<script src="/js_folder/general.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 </html>

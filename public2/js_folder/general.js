@@ -28,7 +28,7 @@ function myMove() {
     } else {
       if ((pos == 210) || (pos == 450) 
       ){
-          general()
+          intersection()
       } else {
        if ((pos == 900) || (pos == 1150)){
           residentialarea()
@@ -87,13 +87,11 @@ return items[Math.floor(Math.random()*items.length)];
 
 
 
+function intersection() {
 
 
 
-
-function general() {
-
-    var table = document.getElementById("general");
+    var table = document.getElementById("intersection");
     var row = table.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
@@ -107,6 +105,8 @@ function general() {
     var cell10 = row.insertCell(9);
     var cell11 = row.insertCell(10);
 
+    cell1.innerHTML = id;  
+    id++;
 
     var vibration1 = randomInteger(100,60);
     var vibration2 = randomInteger(90,60);
@@ -122,52 +122,36 @@ function general() {
     cell7.innerHTML = noise2;
     cell8.innerHTML = noise3;
     
-    var sensorName1 = "General A1";
-    var sensorName2 = "General A2";
-    var sensorName3 = "Residence area A3";
-    var sensorName4 = "Residence area A4";
-    var sensorName5 = "Tunnel B1";
-    var sensorName6 = "Tunnel B2";
-    var sensorName7 = "Bridge B3";
-    var sensorName8 = "Bridge B4";
+    var sensorName1 = "Intersection A1";
+    var sensorName2 = "Intersection A2";
 
 
 
-    cell1.innerHTML = id;
-  
-    id++;
 
-
-    if (pos == 210){
+    if (pos == 210 ){
       cell2.innerHTML = sensorName1;
-      cell9.innerHTML = "Clear";
-      }else if(pos == 450){
-        cell2.innerHTML = sensorName2;
-        cell9.innerHTML = "Clear";
-      }
-      
-      if((noise1 >= 85)&&(vibration1 >= 90)){
-        
-        cell10.innerHTML = "<span style='color: red;'> Bad </span>";
-        cell11.innerHTML = "<span style='color: red;'> Emergency section</span>";
-        pic="/css/imgs/red.png";
-  
-      }else if (vibration1 >=90){
-  
-          cell10.innerHTML = "<span style='color: red;'> Bad </span>";  
-          cell11.innerHTML = "Warning Vibration! <br> (Over 90VdB!)";
-          pic="/css/imgs/red.png";
-          
-      }else if (noise1 >=90){
-          cell10.innerHTML = "<span style='color: red;'> Bad </span>";  
-          cell11.innerHTML = "Warning Noise! <br> (Over 85dB!)";
-          pic="/css/imgs/red.png";
-      } 
-      else{
-        cell10.innerHTML = "<span style='color: green;'> Good </span>";
-        cell11.innerHTML = "Done";
-        pic="/css/imgs/green.png";
-      }
+      cell9.innerHTML = "x축";
+      cell10.innerHTML = "y축";
+      cell11.innerHTML = "z축";
+
+      pic="/css/imgs/green.png";
+     }else 
+     if (pos == 450){
+       cell2.innerHTML= sensorName2;
+       cell9.innerHTML = "x축";
+       cell10.innerHTML = "y축";
+       cell11.innerHTML = "z축";
+
+       pic="/css/imgs/green.png";
+     }
+
+     if (pos == 210) {
+        document.getElementById('bulb1').src=pic;
+     }else if (pos = 450){
+        document.getElementById('bulb2').src=pic;
+     }
+
+
 }
 
 
@@ -222,14 +206,22 @@ function general() {
         cell9.innerHTML = "<span style='color: green;'> clear </span>";
         cell10.innerHTML = "<span style='color: green;'> clear </span>";
         cell11.innerHTML = "<span style='color: green;'> clear </span>";
+        pic="/css/imgs/green.png";
 
         }else if(pos == 1150){
           cell2.innerHTML = sensorName4;
           cell9.innerHTML = "<span style='color: green;'> clear </span>";
           cell10.innerHTML = "<span style='color: green;'> clear </span>";
           cell11.innerHTML = "<span style='color: green;'> clear </span>";
+          pic="/css/imgs/green.png";
           
         }
+      
+        if (pos == 900) {
+            document.getElementById('bulb3').src=pic;
+         }else if (pos = 1150){
+            document.getElementById('bulb4').src=pic;
+         }
   }
 
 
@@ -302,13 +294,25 @@ function general() {
         cell9.innerHTML = "x축";
         cell10.innerHTML = "y축";
         cell11.innerHTML = "z축";
+        pic="/css/imgs/green.png";
        }else 
        if (pos2 == -450){
          cell2.innerHTML= sensorName6;
          cell9.innerHTML = "x축";
          cell10.innerHTML = "y축";
          cell11.innerHTML = "z축";
+         pic="/css/imgs/green.png";
        }
+
+
+
+       if (pos2 == -250){
+        document.getElementById('bulb4').src=pic;
+      } else if (pos2 == -450){
+        document.getElementById('bulb3').src=pic;
+      }
+
+
     }
 
 
@@ -361,11 +365,21 @@ function general() {
           cell9.innerHTML = "x축";
           cell10.innerHTML = "y축";
           cell11.innerHTML = "z축";
+          pic="/css/imgs/green.png";
          }else 
          if (pos2 == -1150){
            cell2.innerHTML= sensorName8;
            cell9.innerHTML = "x축";
            cell10.innerHTML = "y축";
            cell11.innerHTML = "z축";
+           pic="/css/imgs/green.png";
          }
-  }
+  
+         if (pos2== -900){
+            document.getElementById('bulb2').src=pic;
+          } else if (pos2==-1150){
+            document.getElementById('bulb1').src=pic;
+          }
+  
+  
+        }
